@@ -125,7 +125,7 @@ const Portfolio = () => {
       <div className="h-screen w-screen bg-white overflow-y-auto">
         {/* Header */}
         <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
-          <div className="text-sm">Mankun Guo</div>
+          <div className="text-sm">Eileen Ahn</div>
           <button
             onClick={() => setShowInfo(false)}
             className="text-sm hover:opacity-50"
@@ -171,7 +171,7 @@ const Portfolio = () => {
             {/* Column 3 - EDIT THIRD COLUMN TEXT */}
             <div className="text-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                Contact: hello@example.com
+                Contact: ohleenieahn [at] gmail [dot] com
               </p>
               <p className="mb-4">
                 Instagram: @example<br/>
@@ -179,7 +179,7 @@ const Portfolio = () => {
                 LinkedIn: /in/example
               </p>
               <p>
-                © 2024 Mankun Guo. All rights reserved.
+                © 2025 Eileen Ahn. All rights reserved.
               </p>
             </div>
 
