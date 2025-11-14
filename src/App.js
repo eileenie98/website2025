@@ -4,6 +4,8 @@ const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
+  // NEW: Track which filter is active (null means show all projects)
+  const [activeFilter, setActiveFilter] = useState(null);
 
   // ============================================
   // PROJECTS DATA - Edit ALL your projects here in one place
@@ -14,12 +16,14 @@ const Portfolio = () => {
   // - image: Main project image
   // - description: Project description text
   // - image1, image2: Two additional images for the grid
+  // - categories: Array of filter categories this project belongs to (NEW!)
   const projects = [
     { 
       id: 1, 
       title: "Project 01", 
       x: 15, 
       y: 25, 
+      categories: ["FORM", "Print"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=500&fit=crop",
       description: "This project explores minimalist design principles and their application in digital spaces. The work focuses on creating clarity through reduction.",
       image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
@@ -30,6 +34,7 @@ const Portfolio = () => {
       title: "Project 02", 
       x: 30, 
       y: 45, 
+      categories: ["EYES ON", "Motion"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&h=500&fit=crop",
       description: "An exploration of color theory and emotional response through interactive digital installations.",
       image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
@@ -40,6 +45,7 @@ const Portfolio = () => {
       title: "Project 03", 
       x: 45, 
       y: 35, 
+      categories: ["HANDS ON", "Tool"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=500&fit=crop",
       description: "Typographic experiments that bridge traditional letterforms with contemporary digital aesthetics.",
       image1: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop",
@@ -50,6 +56,7 @@ const Portfolio = () => {
       title: "Project 04", 
       x: 60, 
       y: 55, 
+      categories: ["Print", "Identity"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=500&h=500&fit=crop",
       description: "Brand identity system designed for flexibility across multiple touchpoints and mediums.",
       image1: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
@@ -60,6 +67,7 @@ const Portfolio = () => {
       title: "Project 05", 
       x: 75, 
       y: 30, 
+      categories: ["Tool", "Motion"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=500&fit=crop",
       description: "Motion design project exploring rhythm, timing, and visual narrative in animated sequences.",
       image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
@@ -70,6 +78,7 @@ const Portfolio = () => {
       title: "Project 06", 
       x: 25, 
       y: 65, 
+      categories: ["Typography", "Spatial"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=500&h=500&fit=crop",
       description: "Spatial design intervention that reimagines public spaces through light and interactive elements.",
       image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
@@ -80,6 +89,7 @@ const Portfolio = () => {
       title: "Project 07", 
       x: 50, 
       y: 70, 
+      categories: ["Identity", "FORM"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=500&fit=crop",
       description: "Digital tool development focused on enhancing creative workflows for designers and artists.",
       image1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop",
@@ -90,6 +100,7 @@ const Portfolio = () => {
       title: "Project 08", 
       x: 70, 
       y: 20, 
+      categories: ["Typography", "Print"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=500&h=500&fit=crop",
       description: "Print publication exploring the intersection of analog and digital design methodologies.",
       image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
@@ -100,6 +111,7 @@ const Portfolio = () => {
       title: "Project 09", 
       x: 40, 
       y: 80, 
+      categories: ["Typography", "EYES ON"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005198920-f0cb6201c115?w=500&h=500&fit=crop",
       description: "Experimental interface design that challenges conventional navigation and interaction patterns.",
       image1: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=600&fit=crop",
@@ -110,6 +122,7 @@ const Portfolio = () => {
       title: "Project 10", 
       x: 85, 
       y: 60, 
+      categories: ["Typography", "Spatial"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=500&fit=crop",
       description: "Collaborative project merging physical and digital experiences through augmented reality.",
       image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
@@ -171,7 +184,7 @@ const Portfolio = () => {
             {/* Column 3 - EDIT THIRD COLUMN TEXT */}
             <div className="text-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                Contact: ohleenieahn [at] gmail [dot] com
+                Contact: hello@example.com
               </p>
               <p className="mb-4">
                 Instagram: @example<br/>
@@ -203,7 +216,7 @@ const Portfolio = () => {
           >
             ← Back
           </button>
-          <div className="text-sm">Mankun Guo</div>
+          <div className="text-sm">Eileen Ahn</div>
           <button
             onClick={() => setShowInfo(true)}
             className="text-sm hover:opacity-50"
@@ -269,16 +282,80 @@ const Portfolio = () => {
       </button>
 
       {/* Bottom left: Filter Categories - EDIT YOUR CATEGORIES HERE */}
-      <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1 text-gray-400">
-        <div className="hover:text-black cursor-pointer">FORM</div>
-        <div className="hover:text-black cursor-pointer">EYES ON</div>
-        <div className="hover:text-black cursor-pointer">HANDS ON</div>
-        <div className="hover:text-black cursor-pointer">Print</div>
-        <div className="hover:text-black cursor-pointer">Tool</div>
-        <div className="hover:text-black cursor-pointer">Typography</div>
-        <div className="hover:text-black cursor-pointer">Identity</div>
-        <div className="hover:text-black cursor-pointer">Motion</div>
-        <div className="hover:text-black cursor-pointer">Spatial</div>
+      {/* UPDATED: Now clickable to filter projects */}
+      <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1">
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "FORM" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "FORM" ? null : "FORM")}
+        >
+          FORM
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "EYES ON" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "EYES ON" ? null : "EYES ON")}
+        >
+          EYES ON
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "HANDS ON" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "HANDS ON" ? null : "HANDS ON")}
+        >
+          HANDS ON
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Print" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Print" ? null : "Print")}
+        >
+          Print
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Tool" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Tool" ? null : "Tool")}
+        >
+          Tool
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Typography" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Typography" ? null : "Typography")}
+        >
+          Typography
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Identity" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
+        >
+          Identity
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Motion" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Motion" ? null : "Motion")}
+        >
+          Motion
+        </div>
+        <div 
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "Spatial" ? "text-black" : "text-gray-400 hover:text-black"
+          }`}
+          onClick={() => setActiveFilter(activeFilter === "Spatial" ? null : "Spatial")}
+        >
+          Spatial
+        </div>
       </div>
 
       {/* Bottom right: Archive & TXT Links */}
@@ -288,27 +365,35 @@ const Portfolio = () => {
       </div>
 
       {/* Project Dots on X,Y Coordinates */}
+      {/* UPDATED: Dots now gray out when filter is active and they don't match */}
       <div className="absolute inset-0">
-        {projects.map((project) => (
-          <button
-            key={project.id}
-            className="absolute z-30"
-            style={{
-              left: `${project.x}%`,
-              top: `${project.y}%`,
-              transform: 'translate(-50%, -50%)'
-            }}
-            onMouseEnter={() => setHoveredProject(project)}
-            onMouseLeave={() => setHoveredProject(null)}
-            onClick={() => setSelectedProject(project)}
-          >
-            <div
-              className={`w-2 h-2 rounded-full bg-black transition-all ${
-                hoveredProject?.id === project.id ? 'scale-150' : ''
-              }`}
-            />
-          </button>
-        ))}
+        {projects.map((project) => {
+          // Check if this project matches the active filter
+          const isVisible = !activeFilter || project.categories.includes(activeFilter);
+          
+          return (
+            <button
+              key={project.id}
+              className="absolute z-30"
+              style={{
+                left: `${project.x}%`,
+                top: `${project.y}%`,
+                transform: 'translate(-50%, -50%)'
+              }}
+              onMouseEnter={() => setHoveredProject(project)}
+              onMouseLeave={() => setHoveredProject(null)}
+              onClick={() => setSelectedProject(project)}
+            >
+              <div
+                className={`w-2 h-2 rounded-full transition-all ${
+                  hoveredProject?.id === project.id ? 'scale-150' : ''
+                } ${
+                  isVisible ? 'bg-black' : 'bg-gray-300'
+                }`}
+              />
+            </button>
+          );
+        })}
       </div>
 
       {/* Center Hover Image Preview */}
