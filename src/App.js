@@ -20,10 +20,10 @@ const Portfolio = () => {
   const projects = [
     { 
       id: 1, 
-      title: "Project 01", 
+      title: "Democracy Works Impact Report", 
       x: 15, 
       y: 25, 
-      categories: ["FORM", "Print"], // ASSIGN CATEGORIES HERE
+      categories: ["Marketing"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=500&fit=crop",
       description: "This project explores minimalist design principles and their application in digital spaces. The work focuses on creating clarity through reduction.",
       image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
@@ -31,10 +31,10 @@ const Portfolio = () => {
     },
     { 
       id: 2, 
-      title: "Project 02", 
+      title: "TurboVote", 
       x: 30, 
       y: 45, 
-      categories: ["EYES ON", "Motion"], // ASSIGN CATEGORIES HERE
+      categories: ["Marketing"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&h=500&fit=crop",
       description: "An exploration of color theory and emotional response through interactive digital installations.",
       image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
@@ -42,10 +42,10 @@ const Portfolio = () => {
     },
     { 
       id: 3, 
-      title: "Project 03", 
+      title: "50+1 Strategies", 
       x: 45, 
       y: 35, 
-      categories: ["HANDS ON", "Tool"], // ASSIGN CATEGORIES HERE
+      categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=500&fit=crop",
       description: "Typographic experiments that bridge traditional letterforms with contemporary digital aesthetics.",
       image1: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop",
@@ -53,10 +53,10 @@ const Portfolio = () => {
     },
     { 
       id: 4, 
-      title: "Project 04", 
+      title: "Schema Acquisition", 
       x: 60, 
       y: 55, 
-      categories: ["Print", "Identity"], // ASSIGN CATEGORIES HERE
+      categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=500&h=500&fit=crop",
       description: "Brand identity system designed for flexibility across multiple touchpoints and mediums.",
       image1: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
@@ -64,10 +64,10 @@ const Portfolio = () => {
     },
     { 
       id: 5, 
-      title: "Project 05", 
+      title: "ASCII Bedroom Memoir", 
       x: 75, 
       y: 30, 
-      categories: ["Tool", "Motion"], // ASSIGN CATEGORIES HERE
+      categories: ["Web"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=500&fit=crop",
       description: "Motion design project exploring rhythm, timing, and visual narrative in animated sequences.",
       image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
@@ -75,10 +75,10 @@ const Portfolio = () => {
     },
     { 
       id: 6, 
-      title: "Project 06", 
+      title: "Alternative Typographic Histories", 
       x: 25, 
       y: 65, 
-      categories: ["Typography", "Spatial"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=500&h=500&fit=crop",
       description: "Spatial design intervention that reimagines public spaces through light and interactive elements.",
       image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
@@ -86,10 +86,10 @@ const Portfolio = () => {
     },
     { 
       id: 7, 
-      title: "Project 07", 
+      title: "WeDream", 
       x: 50, 
       y: 70, 
-      categories: ["Identity", "FORM"], // ASSIGN CATEGORIES HERE
+      categories: ["Web"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=500&fit=crop",
       description: "Digital tool development focused on enhancing creative workflows for designers and artists.",
       image1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop",
@@ -97,10 +97,10 @@ const Portfolio = () => {
     },
     { 
       id: 8, 
-      title: "Project 08", 
+      title: "Internet Phone Book", 
       x: 70, 
       y: 20, 
-      categories: ["Typography", "Print"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=500&h=500&fit=crop",
       description: "Print publication exploring the intersection of analog and digital design methodologies.",
       image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
@@ -108,25 +108,14 @@ const Portfolio = () => {
     },
     { 
       id: 9, 
-      title: "Project 09", 
+      title: "Kernel Issue 5 Zine", 
       x: 40, 
       y: 80, 
-      categories: ["Typography", "EYES ON"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1618005198920-f0cb6201c115?w=500&h=500&fit=crop",
       description: "Experimental interface design that challenges conventional navigation and interaction patterns.",
       image1: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=600&fit=crop",
       image2: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop"
-    },
-    { 
-      id: 10, 
-      title: "Project 10", 
-      x: 85, 
-      y: 60, 
-      categories: ["Typography", "Spatial"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=500&fit=crop",
-      description: "Collaborative project merging physical and digital experiences through augmented reality.",
-      image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop"
     },
   ];
 
@@ -136,16 +125,26 @@ const Portfolio = () => {
   if (showInfo) {
     return (
       <div className="h-screen w-screen bg-white overflow-y-auto">
-        {/* Header */}
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
-          <div className="text-sm">Eileen Ahn</div>
-          <button
-            onClick={() => setShowInfo(false)}
-            className="text-sm hover:opacity-50"
-          >
-            ✕ Close
-          </button>
-        </div>
+      {/* Header */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
+        {/* UPDATED: Name is now clickable to return home */}
+        <button 
+          onClick={() => {
+            setShowInfo(false);
+            setSelectedProject(null); // FIXED: Also clear selected project
+            setActiveFilter(null);
+          }}
+          className="text-sm hover:opacity-50 transition-opacity"
+        >
+          Eileen Ahn
+        </button>
+        <button
+          onClick={() => setShowInfo(false)}
+          className="text-sm hover:opacity-50"
+        >
+          ✕ Close
+        </button>
+      </div>
 
         {/* 3 Column Content - EDIT YOUR INFO TEXT HERE */}
         <div className="pt-24 pb-20 px-8 h-[calc(100vh-200px)]">
@@ -154,16 +153,12 @@ const Portfolio = () => {
             {/* Column 1 - EDIT FIRST COLUMN TEXT */}
             <div className="text-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                Mankun Guo is a designer and creative technologist based in New York. 
-                Working across visual identity, digital experiences, and interactive installations.
+              I am a Korean-American designer, writer, and creative technologist based in San Francisco.
+              Activated by inquiries rooted in liberation and autonomy, my art and research practice focus on
+              alternative appropriations of digital tools and systems as forms of activism and resistance.
               </p>
               <p className="mb-4">
-                The practice focuses on creating meaningful connections between people, 
-                technology, and the physical world through thoughtful design.
-              </p>
-              <p>
-                Projects span multiple disciplines including branding, digital products, 
-                spatial design, and experimental interfaces.
+              I currently work as a marketing brand designer at a civic tech nonprofit to make voting more accessible.
               </p>
             </div>
 
@@ -184,15 +179,37 @@ const Portfolio = () => {
             {/* Column 3 - EDIT THIRD COLUMN TEXT */}
             <div className="text-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                Contact: hello@example.com
+              ohleenieahn [at] gmail [dot] com
               </p>
               <p className="mb-4">
-                Instagram: @example<br/>
-                Twitter: @example<br/>
-                LinkedIn: /in/example
+              <a 
+                  href="https://www.instagram.com/leanahnleen/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition-colors"
+                >
+                  Instagram
+                </a>
+                <br/>
+                <a 
+                  href="https://www.linkedin.com/in/eileenahn/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-black transition-colors"
+                >
+                  Linkedin
+                </a>
               </p>
               <p>
-                © 2025 Eileen Ahn. All rights reserved.
+              This website was handmade with love and is always in progress…
+              </p><br/>
+
+              <p>
+              Created with React & Tailwind
+              </p><br/>
+
+              <p>
+              © 2025 Eileen Ahn. All rights reserved.
               </p>
             </div>
 
@@ -216,7 +233,7 @@ const Portfolio = () => {
           >
             ← Back
           </button>
-          <div className="text-sm">Eileen Ahn</div>
+          {/* <div className="text-sm">Eileen Ahn</div> */}
           <button
             onClick={() => setShowInfo(true)}
             className="text-sm hover:opacity-50"
@@ -268,10 +285,39 @@ const Portfolio = () => {
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300" />
       </div>
       
-      {/* Top left: Your Name - EDIT YOUR NAME HERE */}
-      <div className="fixed top-6 left-6 z-50 text-sm">
-        Mankun Guo
+      {/* AXIS LABELS - Fixed words at center of each side */}
+      {/* Left center - VERTICAL TEXT */}
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400" style={{ writingMode: 'vertical-lr' }}>
+        DESIGN
       </div>
+      
+      {/* Right center - VERTICAL TEXT */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400" style={{ writingMode: 'vertical-rl' }}>
+        WRITING
+      </div>
+      
+      {/* Top center */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 text-xs text-gray-400">
+        DIGITAL
+      </div>
+      
+      {/* Bottom center */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 text-xs text-gray-400">
+        MATERIAL
+      </div>
+
+      {/* Top left: Your Name - EDIT YOUR NAME HERE */}
+      {/* UPDATED: Now clickable to return to homepage */}
+      <button 
+        onClick={() => {
+          setSelectedProject(null);
+          setShowInfo(false);
+          setActiveFilter(null);
+        }}
+        className="fixed top-6 left-6 z-50 text-sm hover:opacity-50 transition-opacity"
+      >
+        Eileen Ahn
+      </button>
 
       {/* Top right: Info Button */}
       <button
@@ -286,27 +332,19 @@ const Portfolio = () => {
       <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1">
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "FORM" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Identity" ? "text-black" : "text-gray-400 hover:text-black"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "FORM" ? null : "FORM")}
+          onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
         >
-          FORM
+          Identity
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "EYES ON" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Marketing" ? "text-black" : "text-gray-400 hover:text-black"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "EYES ON" ? null : "EYES ON")}
+          onClick={() => setActiveFilter(activeFilter === "Marketing" ? null : "Marketing")}
         >
-          EYES ON
-        </div>
-        <div 
-          className={`cursor-pointer transition-colors ${
-            activeFilter === "HANDS ON" ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-          onClick={() => setActiveFilter(activeFilter === "HANDS ON" ? null : "HANDS ON")}
-        >
-          HANDS ON
+          Marketing
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
@@ -318,43 +356,11 @@ const Portfolio = () => {
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Tool" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Web" ? "text-black" : "text-gray-400 hover:text-black"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Tool" ? null : "Tool")}
+          onClick={() => setActiveFilter(activeFilter === "Web" ? null : "Web")}
         >
-          Tool
-        </div>
-        <div 
-          className={`cursor-pointer transition-colors ${
-            activeFilter === "Typography" ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-          onClick={() => setActiveFilter(activeFilter === "Typography" ? null : "Typography")}
-        >
-          Typography
-        </div>
-        <div 
-          className={`cursor-pointer transition-colors ${
-            activeFilter === "Identity" ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-          onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
-        >
-          Identity
-        </div>
-        <div 
-          className={`cursor-pointer transition-colors ${
-            activeFilter === "Motion" ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-          onClick={() => setActiveFilter(activeFilter === "Motion" ? null : "Motion")}
-        >
-          Motion
-        </div>
-        <div 
-          className={`cursor-pointer transition-colors ${
-            activeFilter === "Spatial" ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-          onClick={() => setActiveFilter(activeFilter === "Spatial" ? null : "Spatial")}
-        >
-          Spatial
+          Web/Video
         </div>
       </div>
 
