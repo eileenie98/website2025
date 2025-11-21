@@ -48,7 +48,7 @@ const Portfolio = () => {
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=500&fit=crop",
       description: 
-      "About <br/> Schema Acquisition is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online",
+      "About <br/> [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online",
       image1: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop",
       image2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop"
     },
@@ -59,11 +59,12 @@ const Portfolio = () => {
       y: 55, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "/images/schema-main.gif",
-      description: "→ About\n\n Schema Acquisition is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online", 
-      research: "→ Research/Strategy\n\n Schema acquisition is a cognitive learning theory that I came across during my Neuroscience thesis. It is loosely defined as linking various elements to form a recognizable pattern to engender new abstractions or understanding through a class of structure (think: windows, wheels, seats, etc… = car!). I believe learning about our selfhood and personal world-building is all about big and small experiences of schema acquisition. I wanted the logo to reflect the process of linkage and multiplicity to create new meanings and systems.",
+      description: "→ About\n [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online.", 
+      research: "→ Research/Strategy\n Schema acquisition is a cognitive learning theory that I came across during my Neuroscience thesis. It is loosely defined as linking various elements to form a recognizable pattern to engender new abstractions or understanding through a class of structure (think: windows, wheels, seats, etc… = car!). I believe learning about our selfhood and personal world-building is all about big and small experiences of schema acquisition. I wanted the logo to reflect the process of linkage and multiplicity to create new meanings and systems.",
+      result: "→ Logo Identity\n The brand identity is built around simple vector points and lines to convey joinment, connection, and gathering. The publication logo is a cursor to signify movement and autonomous direction in the exploration of schema gathering and joinage (whether it be adding or removing to the vector line). Each post is accompanied by “schema(s)” or a visual interpretation of the piece as graphs, charts, doodles, etc.", 
       image1: "/images/schema-01.png",
-      image2: "/images/schema-03.png",
-      image3: "/images/schema-04.png"
+      image2: "/images/schema-02.png",
+      image3: "/images/schema-03.png"
     },
     { 
       id: 5, 
@@ -247,91 +248,147 @@ const Portfolio = () => {
           </button>
         </div>
 
-           {/* Project Content - Now pulls from PROJECTS DATA array */}
-           <div className="pt-24 pb-20 px-8 max-w-6xl mx-auto">
-          {/* Project Title */}
-          <h1 className="text-6xl mb-12">{selectedProject.title}</h1>
-          
-          {/* Main Project Image */}
-          <img 
-            src={selectedProject.image} 
-            alt={selectedProject.title}
-            className="w-full mb-20"
-          />
-
-          {/* Project Description - Now pulls from project data */}
-          <div className="max-w-6xl mb-20">
-            <div className="text-base leading-relaxed">
-              {/* Split text by double line breaks and make first line bold */}
-              {selectedProject.description.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="mb-6">
-                  {index === 0 ? (
-                    // First paragraph - make the first line bold
-                    <>
-                      {paragraph.split('\n').map((line, i) => (
+        {/* Project Content - Now pulls from PROJECTS DATA array */}
+        {/* UPDATED: 2-column layout - 1/3 text (left) + 2/3 images (right) */}
+        <div className="pt-24 pb-20 px-8">
+          <div className="flex gap-10 max-w-7xl mx-auto">
+            
+            {/* LEFT COLUMN - 1/3 width - Text content */}
+            <div className="w-1/3 flex-shrink-0">
+            {/* Project Title */}
+            <h1 className="text-2xl mb-6">{selectedProject.title}</h1>
+              
+            {/* UPDATED: Now supports clickable links */}
+            <div className="text-sm leading-relaxed">
+                {selectedProject.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4">
+                    {paragraph.split('\n').map((line, i) => {
+                      // Convert [text](url) format to clickable links
+                      const parts = line.split(/(\[.*?\]\(.*?\))/g);
+                      return (
                         <span key={i}>
-                          {i === 0 ? <strong>{line}</strong> : line}
+                          {parts.map((part, j) => {
+                            const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                            if (linkMatch) {
+                              return (
+                                <a
+                                  key={j}
+                                  href={linkMatch[2]}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="underline hover:opacity-50 transition-opacity"
+                                >
+                                  {linkMatch[1]}
+                                </a>
+                              );
+                            }
+                            return <span key={j}>{part}</span>;
+                          })}
                           {i < paragraph.split('\n').length - 1 && <br />}
                         </span>
-                      ))}
-                    </>
-                  ) : (
-                    // Other paragraphs - check if they start with a header (→ or text before line break)
-                    paragraph.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {i === 0 && line.includes('→') ? <strong>{line}</strong> : line}
-                        {i === 0 && !line.includes('→') && paragraph.split('\n').length > 1 ? <strong>{line}</strong> : i > 0 && line}
-                        {i < paragraph.split('\n').length - 1 && <br />}
-                      </span>
-                    ))
-                  )}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          {/* Two Column Images - Now pulls from project data */}
-          <div className="grid grid-cols-2 gap-8 mb-20">
-            <img src={selectedProject.image1} alt="" className="w-full" />
-            <img src={selectedProject.image2} alt="" className="w-full" />
-          </div>
-
-              {/* Research Section - NEW: Display research text if it exists */}
-              {selectedProject.research && (
-            <div className="max-w-6xl mb-20">
-              <div className="text-base leading-relaxed">
-                {/* Split text by double line breaks and make first line bold */}
-                {selectedProject.research.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="mb-6">
-                    {index === 0 ? (
-                      // First paragraph - make the first line bold
-                      <>
-                        {paragraph.split('\n').map((line, i) => (
-                          <span key={i}>
-                            {i === 0 ? <strong>{line}</strong> : line}
-                            {i < paragraph.split('\n').length - 1 && <br />}
-                          </span>
-                        ))}
-                      </>
-                    ) : (
-                      // Other paragraphs - check if they start with a header
-                      paragraph.split('\n').map((line, i) => (
-                        <span key={i}>
-                          {i === 0 && line.includes('→') ? <strong>{line}</strong> : line}
-                          {i === 0 && !line.includes('→') && paragraph.split('\n').length > 1 ? <strong>{line}</strong> : i > 0 && line}
-                          {i < paragraph.split('\n').length - 1 && <br />}
-                        </span>
-                      ))
-                    )}
+                      );
+                    })}
                   </p>
                 ))}
               </div>
-            </div>
-          )}
 
-          {/* Extra full sized images */}
-          <img src={selectedProject.image3} alt="" className="w-full mb-20"/>
-          <img src={selectedProject.image4} alt="" className="w-full mb-20"/>
+              {/* Research Section */}
+              {/* UPDATED: Now supports clickable links */}
+              {selectedProject.research && (
+                <div className="text-sm leading-relaxed">
+                  {selectedProject.research.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="mb-4">
+                      {paragraph.split('\n').map((line, i) => {
+                        // Convert [text](url) format to clickable links
+                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
+                        return (
+                          <span key={i}>
+                            {parts.map((part, j) => {
+                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                              if (linkMatch) {
+                                return (
+                                  <a
+                                    key={j}
+                                    href={linkMatch[2]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline hover:opacity-50 transition-opacity"
+                                  >
+                                    {linkMatch[1]}
+                                  </a>
+                                );
+                              }
+                              return <span key={j}>{part}</span>;
+                            })}
+                            {i < paragraph.split('\n').length - 1 && <br />}
+                          </span>
+                        );
+                      })}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {/* Research Section */}
+              {/* UPDATED: Now supports clickable links */}
+              {selectedProject.result && (
+                <div className="text-sm leading-relaxed">
+                  {selectedProject.result.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="mb-4">
+                      {paragraph.split('\n').map((line, i) => {
+                        // Convert [text](url) format to clickable links
+                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
+                        return (
+                          <span key={i}>
+                            {parts.map((part, j) => {
+                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                              if (linkMatch) {
+                                return (
+                                  <a
+                                    key={j}
+                                    href={linkMatch[2]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline hover:opacity-50 transition-opacity"
+                                  >
+                                    {linkMatch[1]}
+                                  </a>
+                                );
+                              }
+                              return <span key={j}>{part}</span>;
+                            })}
+                            {i < paragraph.split('\n').length - 1 && <br />}
+                          </span>
+                        );
+                      })}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT COLUMN - 2/3 width - Images */}
+            <div className="w-2/3 space-y-8">
+              {/* Main Project Image */}
+              <img 
+                src={selectedProject.image} 
+                alt={selectedProject.title}
+                className="w-full"
+              />
+
+              {/* Other Images */}
+              <img src={selectedProject.image1} alt="" className="w-full"/>
+              <img src={selectedProject.image2} alt="" className="w-full"/>
+              <img src={selectedProject.image3} alt="" className="w-full"/>
+
+              {/* Two Column Images Grid */}
+              {/* <div className="grid grid-cols-2 gap-8">
+                <img src={selectedProject.image1} alt="" className="w-full" />
+                <img src={selectedProject.image2} alt="" className="w-full" />
+              </div> */}
+            </div>
+
+          </div>
         </div>
       </div>
     );
