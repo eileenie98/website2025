@@ -46,11 +46,15 @@ const Portfolio = () => {
       x: 45, 
       y: 35, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=500&fit=crop",
-      description: 
-      "About <br/> [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online",
-      image1: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop"
+      image: "/images/50p1-main.png",
+      description: "→ Intro\n [50+1 Strategies](https://50p1.com/) was a political consulting firm based in San Francisco that operated for 13 years to build  local campaigns and grassroots movements surrounding progressive advocacy. In their 11th year, I was tasked with their rebrand and art direction of the new website.\n\n Role: Lead Designer, Art Director\n Web Design by Apollo Artistry", 
+      research: "→ Challenge\n The challenge was dissecting the firm’s title and old logo of the numbers (50, 1), signifying a tipping point towards the majority. There was also a need to create a timeless logo symbolic of dynamic, lasting movement for and towards change.",
+      result: "→ Solution\n The solution was utilizing the plus sign that served as the joining motif of the two numbers. We arrived at a logo that considers the balance of youthful power as well as dynamism and strength. The layered plus sign offers an open-ended visual interpretation that alludes to windows or doors and portals of change to the other side.",
+      impact: "→ Impact\n The new brand identity received overwhelmingly positive feedback from past and present clients with opportunities for new collaborations. The rebrand launch drove website traffic by 147% with a 28% increase in newsletter subscribers.",
+      image1: "/images/50p1-01.png",
+      image2: "/images/50p1-02.png",
+      image3: "/images/50p1-03.png",
+      image4: "/images/50p1-05.mov"
     },
     { 
       id: 4, 
@@ -59,23 +63,22 @@ const Portfolio = () => {
       y: 55, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "/images/schema-main.gif",
-      description: "→ About\n [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online.", 
+      description: "→ Intro\n [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online.", 
       research: "→ Research/Strategy\n Schema acquisition is a cognitive learning theory that I came across during my Neuroscience thesis. It is loosely defined as linking various elements to form a recognizable pattern to engender new abstractions or understanding through a class of structure (think: windows, wheels, seats, etc… = car!). I believe learning about our selfhood and personal world-building is all about big and small experiences of schema acquisition. I wanted the logo to reflect the process of linkage and multiplicity to create new meanings and systems.",
       result: "→ Logo Identity\n The brand identity is built around simple vector points and lines to convey joinment, connection, and gathering. The publication logo is a cursor to signify movement and autonomous direction in the exploration of schema gathering and joinage (whether it be adding or removing to the vector line). Each post is accompanied by “schema(s)” or a visual interpretation of the piece as graphs, charts, doodles, etc.", 
       image1: "/images/schema-01.png",
       image2: "/images/schema-02.png",
       image3: "/images/schema-03.png"
     },
-    { 
-      id: 5, 
-      title: "ASCII Bedroom Memoir", 
-      x: 75, 
-      y: 30, 
-      categories: ["Web"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=500&fit=crop",
-      description: "Motion design project exploring rhythm, timing, and visual narrative in animated sequences.",
-      image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618005198920-f0cb6201c115?w=800&h=600&fit=crop"
+    {
+      id: 5,
+      title: "ASCII Bedroom Memoir",
+      x: 42,
+      y: 21,
+      categories: ["Web"],
+      externalLink: "https://thehtml.review/04/",
+      image: "/images/ascii-main.png"
+      // No need for description, research, image1, image2
     },
     { 
       id: 6, 
@@ -88,16 +91,15 @@ const Portfolio = () => {
       image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
       image2: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop"
     },
-    { 
-      id: 7, 
-      title: "WeDream", 
-      x: 50, 
-      y: 70, 
-      categories: ["Web"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=500&h=500&fit=crop",
-      description: "Digital tool development focused on enhancing creative workflows for designers and artists.",
-      image1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop"
+    {
+      id: 7,
+      title: "WeDream",
+      x: 75,
+      y: 30,
+      categories: ["Web"],
+      externalLink: "https://www.youtube.com/watch?v=WCObWm1_5cg&feature=youtu.be",
+      image: "/images/wedream-main.png",
+      // No need for description, research, image1, image2
     },
     { 
       id: 8, 
@@ -261,7 +263,7 @@ const Portfolio = () => {
             {/* UPDATED: Now supports clickable links */}
             <div className="text-sm leading-relaxed">
                 {selectedProject.description.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="mb-4">
+                  <p key={index} className="mb-5">
                     {paragraph.split('\n').map((line, i) => {
                       // Convert [text](url) format to clickable links
                       const parts = line.split(/(\[.*?\]\(.*?\))/g);
@@ -297,7 +299,7 @@ const Portfolio = () => {
               {selectedProject.research && (
                 <div className="text-sm leading-relaxed">
                   {selectedProject.research.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-4">
+                    <p key={index} className="mb-5">
                       {paragraph.split('\n').map((line, i) => {
                         // Convert [text](url) format to clickable links
                         const parts = line.split(/(\[.*?\]\(.*?\))/g);
@@ -329,12 +331,49 @@ const Portfolio = () => {
                 </div>
               )}
 
-              {/* Research Section */}
+              {/* Result Section */}
               {/* UPDATED: Now supports clickable links */}
               {selectedProject.result && (
                 <div className="text-sm leading-relaxed">
                   {selectedProject.result.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-4">
+                    <p key={index} className="mb-5">
+                      {paragraph.split('\n').map((line, i) => {
+                        // Convert [text](url) format to clickable links
+                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
+                        return (
+                          <span key={i}>
+                            {parts.map((part, j) => {
+                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                              if (linkMatch) {
+                                return (
+                                  <a
+                                    key={j}
+                                    href={linkMatch[2]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline hover:opacity-50 transition-opacity"
+                                  >
+                                    {linkMatch[1]}
+                                  </a>
+                                );
+                              }
+                              return <span key={j}>{part}</span>;
+                            })}
+                            {i < paragraph.split('\n').length - 1 && <br />}
+                          </span>
+                        );
+                      })}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {/* Impact Section */}
+              {/* UPDATED: Now supports clickable links */}
+              {selectedProject.impact && (
+                <div className="text-sm leading-relaxed">
+                  {selectedProject.impact.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="mb-5">
                       {paragraph.split('\n').map((line, i) => {
                         // Convert [text](url) format to clickable links
                         const parts = line.split(/(\[.*?\]\(.*?\))/g);
@@ -380,6 +419,8 @@ const Portfolio = () => {
               <img src={selectedProject.image1} alt="" className="w-full"/>
               <img src={selectedProject.image2} alt="" className="w-full"/>
               <img src={selectedProject.image3} alt="" className="w-full"/>
+              <img src={selectedProject.image4} alt="" className="w-full"/>
+              <img src={selectedProject.image5} alt="" className="w-full"/>
 
               {/* Two Column Images Grid */}
               {/* <div className="grid grid-cols-2 gap-8">
@@ -495,7 +536,8 @@ const Portfolio = () => {
 
       {/* Project Dots on X,Y Coordinates */}
       {/* UPDATED: Dots now gray out when filter is active and they don't match */}
-      <div className="absolute inset-0">
+       {/* UPDATED: Dots with externalLink open URL in new tab instead of inner page */}
+       <div className="absolute inset-0">
         {projects.map((project) => {
           // Check if this project matches the active filter
           const isVisible = !activeFilter || project.categories.includes(activeFilter);
@@ -511,10 +553,18 @@ const Portfolio = () => {
               }}
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => {
+                // If project has externalLink, open in new tab
+                if (project.externalLink) {
+                  window.open(project.externalLink, '_blank', 'noopener,noreferrer');
+                } else {
+                  // Otherwise, open inner page as normal
+                  setSelectedProject(project);
+                }
+              }}
             >
               <div
-                className={`w-3 h-3 rounded-full transition-all ${
+                className={`w-2 h-2 rounded-full transition-all ${
                   hoveredProject?.id === project.id ? 'scale-150' : ''
                 } ${
                   isVisible ? 'bg-black' : 'bg-gray-300'
