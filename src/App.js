@@ -47,7 +47,8 @@ const Portfolio = () => {
       y: 35, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=500&fit=crop",
-      description: "Typographic experiments that bridge traditional letterforms with contemporary digital aesthetics.",
+      description: 
+      "About <br/> Schema Acquisition is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online",
       image1: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop",
       image2: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop"
     },
@@ -57,10 +58,12 @@ const Portfolio = () => {
       x: 60, 
       y: 55, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=500&h=500&fit=crop",
-      description: "Brand identity system designed for flexibility across multiple touchpoints and mediums.",
-      image1: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=600&fit=crop"
+      image: "/images/schema-main.gif",
+      description: "→ About\n\n Schema Acquisition is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online", 
+      research: "→ Research/Strategy\n\n Schema acquisition is a cognitive learning theory that I came across during my Neuroscience thesis. It is loosely defined as linking various elements to form a recognizable pattern to engender new abstractions or understanding through a class of structure (think: windows, wheels, seats, etc… = car!). I believe learning about our selfhood and personal world-building is all about big and small experiences of schema acquisition. I wanted the logo to reflect the process of linkage and multiplicity to create new meanings and systems.",
+      image1: "/images/schema-01.png",
+      image2: "/images/schema-03.png",
+      image3: "/images/schema-04.png"
     },
     { 
       id: 5, 
@@ -165,14 +168,11 @@ const Portfolio = () => {
             {/* Column 2 - EDIT SECOND COLUMN TEXT */}
             <div className="text-sm leading-relaxed text-gray-600">
               <p className="mb-4">
-                Selected clients include Client One, Client Two, Client Three, Client Four, 
-                Client Five, and Client Six.
-              </p>
-              <p className="mb-4">
-                Work has been featured in Publication A, Publication B, and Exhibition C.
-              </p>
-              <p>
-                Currently available for select projects and collaborations.
+                Current Infatuations: <br/>
+                &#8594; Song on repeat is Human Happens by Magdalena Bay <br/>
+                &#8594; The last drink I sipped is a warm glass of milk (yes, I am a proud whole milk drinker leave me alone) <br/>
+                &#8594; A restaurant I want to revisit is Kevin & Chris's Noodle House on Irving <br/>
+                &#8594; I am struggling to get through 600 pages of Death's End by Cixin Liu
               </p>
             </div>
 
@@ -186,26 +186,31 @@ const Portfolio = () => {
                   href="https://www.instagram.com/leanahnleen/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-black transition-colors"
+                  className="hover:text-purple-500 transition-colors"
                 >
-                  Instagram
+                  Instagram &#8599;
                 </a>
                 <br/>
                 <a 
                   href="https://www.linkedin.com/in/eileenahn/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-black transition-colors"
+                  className="hover:text-purple-500 transition-colors"
                 >
-                  Linkedin
+                  Linkedin &#8599;
+                </a>
+                <br/>
+                <a 
+                  href="https://schemacquisition.substack.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-purple-500 transition-colors"
+                >
+                  Substack &#8599;
                 </a>
               </p>
               <p>
-              This website was handmade with love and is always in progress…
-              </p><br/>
-
-              <p>
-              Created with React & Tailwind
+              This website was handmade with love (+ React & Tailwind) and is always in progress…
               </p><br/>
 
               <p>
@@ -222,7 +227,7 @@ const Portfolio = () => {
   // ============================================
   // PROJECT DETAIL PAGE
   // ============================================
-  if (selectedProject) {
+  if (selectedProject && !showInfo) {
     return (
       <div className="min-h-screen w-screen bg-white overflow-y-auto">
         {/* Header */}
@@ -242,8 +247,8 @@ const Portfolio = () => {
           </button>
         </div>
 
-        {/* Project Content - Now pulls from PROJECTS DATA array */}
-        <div className="pt-24 pb-20 px-8 max-w-6xl mx-auto">
+           {/* Project Content - Now pulls from PROJECTS DATA array */}
+           <div className="pt-24 pb-20 px-8 max-w-6xl mx-auto">
           {/* Project Title */}
           <h1 className="text-6xl mb-12">{selectedProject.title}</h1>
           
@@ -254,18 +259,79 @@ const Portfolio = () => {
             className="w-full mb-20"
           />
 
+          {/* Project Description - Now pulls from project data */}
+          <div className="max-w-6xl mb-20">
+            <div className="text-base leading-relaxed">
+              {/* Split text by double line breaks and make first line bold */}
+              {selectedProject.description.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="mb-6">
+                  {index === 0 ? (
+                    // First paragraph - make the first line bold
+                    <>
+                      {paragraph.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {i === 0 ? <strong>{line}</strong> : line}
+                          {i < paragraph.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </>
+                  ) : (
+                    // Other paragraphs - check if they start with a header (→ or text before line break)
+                    paragraph.split('\n').map((line, i) => (
+                      <span key={i}>
+                        {i === 0 && line.includes('→') ? <strong>{line}</strong> : line}
+                        {i === 0 && !line.includes('→') && paragraph.split('\n').length > 1 ? <strong>{line}</strong> : i > 0 && line}
+                        {i < paragraph.split('\n').length - 1 && <br />}
+                      </span>
+                    ))
+                  )}
+                </p>
+              ))}
+            </div>
+          </div>
+
           {/* Two Column Images - Now pulls from project data */}
           <div className="grid grid-cols-2 gap-8 mb-20">
             <img src={selectedProject.image1} alt="" className="w-full" />
             <img src={selectedProject.image2} alt="" className="w-full" />
           </div>
 
-          {/* Project Description - Now pulls from project data */}
-          <div className="max-w-3xl">
-            <p className="text-lg leading-relaxed">
-              {selectedProject.description}
-            </p>
-          </div>
+              {/* Research Section - NEW: Display research text if it exists */}
+              {selectedProject.research && (
+            <div className="max-w-6xl mb-20">
+              <div className="text-base leading-relaxed">
+                {/* Split text by double line breaks and make first line bold */}
+                {selectedProject.research.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-6">
+                    {index === 0 ? (
+                      // First paragraph - make the first line bold
+                      <>
+                        {paragraph.split('\n').map((line, i) => (
+                          <span key={i}>
+                            {i === 0 ? <strong>{line}</strong> : line}
+                            {i < paragraph.split('\n').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </>
+                    ) : (
+                      // Other paragraphs - check if they start with a header
+                      paragraph.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {i === 0 && line.includes('→') ? <strong>{line}</strong> : line}
+                          {i === 0 && !line.includes('→') && paragraph.split('\n').length > 1 ? <strong>{line}</strong> : i > 0 && line}
+                          {i < paragraph.split('\n').length - 1 && <br />}
+                        </span>
+                      ))
+                    )}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Extra full sized images */}
+          <img src={selectedProject.image3} alt="" className="w-full mb-20"/>
+          <img src={selectedProject.image4} alt="" className="w-full mb-20"/>
         </div>
       </div>
     );
@@ -287,7 +353,7 @@ const Portfolio = () => {
       
       {/* AXIS LABELS - Fixed words at center of each side */}
       {/* Left center - VERTICAL TEXT */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400" style={{ writingMode: 'vertical-lr' }}>
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400 rotate-180" style={{ writingMode: 'vertical-lr' }}>
         DESIGN
       </div>
       
@@ -332,7 +398,7 @@ const Portfolio = () => {
       <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1">
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Identity" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Identity" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
           onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
         >
@@ -340,7 +406,7 @@ const Portfolio = () => {
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Marketing" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Marketing" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
           onClick={() => setActiveFilter(activeFilter === "Marketing" ? null : "Marketing")}
         >
@@ -348,7 +414,7 @@ const Portfolio = () => {
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Print" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Print" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
           onClick={() => setActiveFilter(activeFilter === "Print" ? null : "Print")}
         >
@@ -356,7 +422,7 @@ const Portfolio = () => {
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Web" ? "text-black" : "text-gray-400 hover:text-black"
+            activeFilter === "Web" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
           onClick={() => setActiveFilter(activeFilter === "Web" ? null : "Web")}
         >
@@ -364,11 +430,11 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Bottom right: Archive & TXT Links */}
+      {/* Bottom right: Archive & TXT Links
       <div className="fixed bottom-6 right-6 z-50 text-xs space-y-1 text-gray-400">
         <div className="hover:text-black cursor-pointer">Archive</div>
         <div className="hover:text-black cursor-pointer">TXT</div>
-      </div>
+      </div> */}
 
       {/* Project Dots on X,Y Coordinates */}
       {/* UPDATED: Dots now gray out when filter is active and they don't match */}
@@ -391,7 +457,7 @@ const Portfolio = () => {
               onClick={() => setSelectedProject(project)}
             >
               <div
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-3 h-3 rounded-full transition-all ${
                   hoveredProject?.id === project.id ? 'scale-150' : ''
                 } ${
                   isVisible ? 'bg-black' : 'bg-gray-300'
