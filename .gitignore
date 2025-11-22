@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# assets
+/public/images/50p1-05.mov
+
 # testing
 /coverage
 
