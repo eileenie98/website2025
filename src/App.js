@@ -53,8 +53,7 @@ const Portfolio = () => {
       impact: "→ Impact\n The new brand identity received overwhelmingly positive feedback from past and present clients with opportunities for new collaborations. The rebrand launch drove website traffic by 147% with a 28% increase in newsletter subscribers.",
       image1: "/images/50p1-01.png",
       image2: "/images/50p1-02.png",
-      image3: "/images/50p1-03.png",
-      image4: "/images/50p1-05.mov"
+      image3: "/images/50p1.gif",
     },
     { 
       id: 4, 
