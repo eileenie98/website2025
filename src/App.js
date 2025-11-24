@@ -81,14 +81,15 @@ const Portfolio = () => {
     },
     { 
       id: 6, 
-      title: "Alternative Typographic Histories", 
+      title: "Internet Phone Book", 
       x: 25, 
       y: 65, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=500&h=500&fit=crop",
-      description: "Spatial design intervention that reimagines public spaces through light and interactive elements.",
-      image1: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618556450983-b7b7e1f03e0c?w=800&h=600&fit=crop"
+      image: "/images/ipb.png",
+      description: "→ Intro\n [Internet Phone Book](https://internetphonebook.net/), as quoted from the website, is 'an annual publication for exploring the vast poetic web, featuring essays, musings and a directory with the personal websites of hundreds of designers, developers, writers, curators, and educators.' My essay, [A History of My Websites](https://schemacquisition.substack.com/p/9-a-history-of-my-websites), first published on my Substack, is featured on pg. 153 of the publication.", 
+      image2: "/images/ipb-03.png",
+      image4: "/images/ipb-04.png",
+      image5: "/images/ipb-05.png"
     },
     {
       id: 7,
@@ -102,7 +103,7 @@ const Portfolio = () => {
     },
     { 
       id: 8, 
-      title: "Internet Phone Book", 
+      title: "Alternative Typographic Histories", 
       x: 70, 
       y: 20, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
@@ -174,7 +175,7 @@ const Portfolio = () => {
                 &#8594; Song on repeat is Human Happens by Magdalena Bay <br/>
                 &#8594; The last drink I sipped is a warm glass of milk (yes, I am a proud whole milk drinker leave me alone) <br/>
                 &#8594; A restaurant I want to revisit is Kevin & Chris's Noodle House on Irving <br/>
-                &#8594; I am struggling to get through 600 pages of Death's End by Cixin Liu
+                &#8594; I am slowly making my way through 600 pages of Death's End by Cixin Liu
               </p>
             </div>
 
@@ -406,7 +407,7 @@ const Portfolio = () => {
             </div>
 
             {/* RIGHT COLUMN - 2/3 width - Images */}
-            <div className="w-2/3 space-y-8">
+            <div className="w-2/3 space-y-4">
               {/* Main Project Image */}
               <img 
                 src={selectedProject.image} 
@@ -418,14 +419,12 @@ const Portfolio = () => {
               <img src={selectedProject.image1} alt="" className="w-full"/>
               <img src={selectedProject.image2} alt="" className="w-full"/>
               <img src={selectedProject.image3} alt="" className="w-full"/>
-              <img src={selectedProject.image4} alt="" className="w-full"/>
-              <img src={selectedProject.image5} alt="" className="w-full"/>
 
               {/* Two Column Images Grid */}
-              {/* <div className="grid grid-cols-2 gap-8">
-                <img src={selectedProject.image1} alt="" className="w-full" />
-                <img src={selectedProject.image2} alt="" className="w-full" />
-              </div> */}
+              <div className="grid grid-cols-2 gap-2">
+                <img src={selectedProject.image4} alt="" className="w-full" />
+                <img src={selectedProject.image5} alt="" className="w-full" />
+              </div>
             </div>
 
           </div>
