@@ -87,7 +87,9 @@ const Portfolio = () => {
       categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "/images/ipb.png",
       description: "→ Intro\n [Internet Phone Book](https://internetphonebook.net/), as quoted from the website, is 'an annual publication for exploring the vast poetic web, featuring essays, musings and a directory with the personal websites of hundreds of designers, developers, writers, curators, and educators.' My essay, [A History of My Websites](https://schemacquisition.substack.com/p/9-a-history-of-my-websites), first published on my Substack, is featured on pg. 153 of the publication.", 
-      image2: "/images/ipb-03.png",
+      image1: "/images/ipb-01.png",
+      image2: "/images/ipb-02.png",
+      image3: "/images/ipb-03.png",
       image4: "/images/ipb-04.png",
       image5: "/images/ipb-05.png"
     },
