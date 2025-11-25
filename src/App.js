@@ -24,10 +24,15 @@ const Portfolio = () => {
       x: 15, 
       y: 25, 
       categories: ["Marketing"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=500&fit=crop",
-      description: "This project explores minimalist design principles and their application in digital spaces. The work focuses on creating clarity through reduction.",
-      image1: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=800&h=600&fit=crop"
+      image: "/images/dw.png",
+      description: "→ Intro\n For Democracy Works’[annual impact report](https://www.democracy.works/2024-impact-report), I was tasked with retelling the organization’s most insightful data and impacts into a compelling visual narrative on the web.",
+      research: "→ Challenge\n The challenge was to create a different look and feel from the [previous year's impact report](https://www.democracy.works/2023-impact-report), while maintaining brand consistency dependent on a limited palette of pink, blue, and teal. It was also critical to ensure that there weren’t walls of text so users could continue reading and reduce bounce rate.",
+      result: "→ Solution\n The solution was to lead with flat vector illustrations with compelling scroll animations that emphasized the importance of voting. By drawing on familiar motifs and visual cues surrounding civic engagement, each section offers a holistic overview of the insight.",
+      impact: "→ Impact\n The impact report was successful in its reach and storytelling, with positive feedback from stakeholders and board members. Post social launch, we saw a 169% increase in LinkedIn engagement rate as well as 5K new active visitors on the Democracy Works website.",
+      image1: "/images/dw-01.png",
+      image2: "/images/dw-02.png",
+      image4: "/images/dw-03.png",
+      image5: "/images/dw-04.png"
     },
     { 
       id: 2, 
@@ -120,10 +125,11 @@ const Portfolio = () => {
       x: 40, 
       y: 80, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1618005198920-f0cb6201c115?w=500&h=500&fit=crop",
+      image: "/images/kernel.png",
       description: "Experimental interface design that challenges conventional navigation and interaction patterns.",
-      image1: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop"
+      image1: "/images/kernel-01.png",
+      image2: "/images/kernel-02.png",
+      image3: "/images/kernel-03.png"
     },
   ];
 
