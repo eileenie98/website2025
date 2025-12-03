@@ -21,11 +21,11 @@ const Portfolio = () => {
     { 
       id: 1, 
       title: "Democracy Works Impact Report", 
-      x: 15, 
-      y: 25, 
+      x: 35, 
+      y: 45, 
       categories: ["Marketing"], // ASSIGN CATEGORIES HERE
       image: "/images/dw.png",
-      description: "→ Intro\n For Democracy Works’[annual impact report](https://www.democracy.works/2024-impact-report), I was tasked with retelling the organization’s most insightful data and impacts into a compelling visual narrative on the web.",
+      description: "→ Intro\n For Democracy Works’[annual impact report](https://www.democracy.works/2024-impact-report), I was tasked with retelling the organization’s most insightful data and impacts into a compelling visual narrative on the web.\n\n Role: Designer, Art Director\n Web Design by Lightboard",
       research: "→ Challenge\n The challenge was to create a different look and feel from the [previous year's impact report](https://www.democracy.works/2023-impact-report), while maintaining brand consistency dependent on a limited palette of pink, blue, and teal. It was also critical to ensure that there weren’t walls of text so users could continue reading and reduce bounce rate.",
       result: "→ Solution\n The solution was to lead with flat vector illustrations with compelling scroll animations that emphasized the importance of voting. By drawing on familiar motifs and visual cues surrounding civic engagement, each section offers a holistic overview of the insight.",
       impact: "→ Impact\n The impact report was successful in its reach and storytelling, with positive feedback from stakeholders and board members. Post social launch, we saw a 169% increase in LinkedIn engagement rate as well as 5K new active visitors on the Democracy Works website.",
@@ -37,19 +37,23 @@ const Portfolio = () => {
     { 
       id: 2, 
       title: "TurboVote", 
-      x: 30, 
-      y: 45, 
+      x: 25, 
+      y: 25, 
       categories: ["Marketing"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&h=500&fit=crop",
-      description: "An exploration of color theory and emotional response through interactive digital installations.",
-      image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=600&fit=crop"
+      image: "/images/TV-01.png",
+      description: "→ Intro\n [TurboVote](https://turbovote.org/) is a digital platform that offers a personalized voting guidance to show voters what is at stake. Various organizations in private and public sectors partner with TurboVote to engage voters through customized embeds on their sites. I was tasked with creating a new suite of illustrations for the TurboVote homepage  to elevate the voter homepage experience.\n\n Role: Illustrator, Designer\n Product Design by Ryan Pierson",
+      research: "→ Challenge\n The challenge was representing a diverse range of people icons that showcased an inclusive range of age, race, and gender. It was also challenging to translate niche voter vocabulary into a visual context relevant to each action.",
+      result: "→ Solution\n The solution was to create flexible expressions, add accessories, and a range of skin tones and hair colors. Assigning blue and gray tones to hair added a layer of fiction with an open interpretation of the characters. Pink was used to emphasize the core action of each terminology.",
+      impact: "→ Impact\n After the initial launch of the new suite of icons, 7.6% more partners opted in for a new set of illustrations versus the default vector icons. Recently, the project expanded to offer 5 more colors in red, green, blue, purple, and black to better meet partner branding needs. \n\n Partner Use Cases: [George Washington University](https://gwu.turbovote.org/), [Rutgers University](https://rutgers.turbovote.org/), [Vo+er](https://voter.turbovote.org/)",
+      image1: "/images/TV-02.png",
+      image4: "/images/TV-03.png",
+      image5: "/images/TV-04.png",
     },
     { 
       id: 3, 
       title: "50+1 Strategies", 
-      x: 45, 
-      y: 35, 
+      x: 15, 
+      y: 40, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "/images/50p1-main.png",
       description: "→ Intro\n [50+1 Strategies](https://50p1.com/) was a political consulting firm based in San Francisco that operated for 13 years to build  local campaigns and grassroots movements surrounding progressive advocacy. In their 11th year, I was tasked with their rebrand and art direction of the new website.\n\n Role: Lead Designer, Art Director\n Web Design by Apollo Artistry", 
@@ -63,8 +67,8 @@ const Portfolio = () => {
     { 
       id: 4, 
       title: "Schema Acquisition", 
-      x: 60, 
-      y: 55, 
+      x: 80, 
+      y: 35, 
       categories: ["Identity"], // ASSIGN CATEGORIES HERE
       image: "/images/schema-main.gif",
       description: "→ Intro\n [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online.", 
@@ -77,8 +81,8 @@ const Portfolio = () => {
     {
       id: 5,
       title: "ASCII Bedroom Memoir",
-      x: 42,
-      y: 21,
+      x: 55,
+      y: 10,
       categories: ["Web"],
       externalLink: "https://thehtml.review/04/",
       image: "/images/ascii-main.png"
@@ -87,8 +91,8 @@ const Portfolio = () => {
     { 
       id: 6, 
       title: "Internet Phone Book", 
-      x: 25, 
-      y: 65, 
+      x: 90, 
+      y: 80, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "/images/ipb.png",
       description: "→ Intro\n [Internet Phone Book](https://internetphonebook.net/), as quoted from the website, is 'an annual publication for exploring the vast poetic web, featuring essays, musings and a directory with the personal websites of hundreds of designers, developers, writers, curators, and educators.' My essay, [A History of My Websites](https://schemacquisition.substack.com/p/9-a-history-of-my-websites), first published on my Substack, is featured on pg. 153 of the publication.", 
@@ -101,8 +105,8 @@ const Portfolio = () => {
     {
       id: 7,
       title: "WeDream",
-      x: 75,
-      y: 30,
+      x: 43,
+      y: 20,
       categories: ["Web"],
       externalLink: "https://www.youtube.com/watch?v=WCObWm1_5cg&feature=youtu.be",
       image: "/images/wedream-main.png",
@@ -111,13 +115,14 @@ const Portfolio = () => {
     { 
       id: 8, 
       title: "Alternative Typographic Histories", 
-      x: 70, 
-      y: 20, 
+      x: 65, 
+      y: 60, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
-      image: "https://images.unsplash.com/photo-1634942536790-4e2b29da2803?w=500&h=500&fit=crop",
-      description: "Print publication exploring the intersection of analog and digital design methodologies.",
-      image1: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=600&fit=crop",
-      image2: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=600&fit=crop"
+      image: "/images/alt-type.gif",
+      description: "→ Intro\n Participating in [School for Poetic Computation (SFPC)'s](https://sfpc.study/) Alternative Typographic Histories class, I conducted an in-depth investigation into jacquard weaving patterns and textile work as a form of alternative language. Jacquard weaving modernized the weaving process and introduced the binary code through its punch card system. Using the punch versus the unpunched system to weave intricate patterns, I wished to study the data of language in a similar format.\n\n Current day, we rely on technologies to archive and utilize systems of language effectively and typing can be seen as a main tool for digital communication. How can type data store meaning beyond what is visible to the eye? What is an alternative interpretation of type language apart from its current usage? I unraveled the encoded keyboard alphabets as ASCII/UTF-8 code of binary strings (e.g. a = 01100001) to write a poem in a punchcard system. This encoded, alternative interpretation of the poem also honors the notion of patternmaking - like its own pixel art, the punchcard poem can be used for knitting, crocheting, and/or weaving to translate into textile art with a hidden message. \n\nThe final project was showcased as a class zine and a poster.",
+      research: "→ Mentors\n Levi Hammett, Hind Al Saad",
+      image1: "/images/alt-type-01.png",
+      image2: "/images/alt-type-02.png"
     },
     { 
       id: 9, 
@@ -126,7 +131,7 @@ const Portfolio = () => {
       y: 80, 
       categories: ["Print"], // ASSIGN CATEGORIES HERE
       image: "/images/kernel.png",
-      description: "Experimental interface design that challenges conventional navigation and interaction patterns.",
+      description: "→ Intro\n [Kernel Magazine](https://www.kernelmag.io/) is an annual print publication by [Reboot](https://joinreboot.org/), a community reimagining techno-optimism for a better collective future.\n\n For their fifth issue launch, I collaborated with [Connie Liu](https://connie.surf/) to create a special riso zine consisting of a paper ruler, 2 print Reboot features, and a postcard.\n\n The zines were sold alongside the book at the issue launch at Gray Area in San Francisco.",
       image1: "/images/kernel-01.png",
       image2: "/images/kernel-02.png",
       image3: "/images/kernel-03.png"
