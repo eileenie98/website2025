@@ -575,7 +575,7 @@ const Portfolio = () => {
               }}
             >
               <div
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-3.5 h-3.5 rounded-full transition-all ${
                   hoveredProject?.id === project.id ? 'scale-150' : ''
                 } ${
                   isVisible ? 'bg-black' : 'bg-gray-300'
