@@ -23,10 +23,13 @@ const Portfolio = () => {
       title: "Democracy Works Impact Report", 
       x: 35, 
       y: 45, 
-      categories: ["Marketing"], // ASSIGN CATEGORIES HERE
+      categories: ["Marketing"],
+      year: "2024",
+      role: "Designer, Art Director",
+      deliverables: "web design, illustration",
       image: "/images/dw.png",
-      description: "→ Intro\n For Democracy Works’[annual impact report](https://www.democracy.works/2024-impact-report), I was tasked with retelling the organization’s most insightful data and impacts into a compelling visual narrative on the web.\n\n Role: Designer, Art Director\n Web Design by Lightboard",
-      research: "→ Challenge\n The challenge was to create a different look and feel from the [previous year's impact report](https://www.democracy.works/2023-impact-report), while maintaining brand consistency dependent on a limited palette of pink, blue, and teal. It was also critical to ensure that there weren’t walls of text so users could continue reading and reduce bounce rate.",
+      description: "→ Intro\n For Democracy Works'[annual impact report](https://www.democracy.works/2024-impact-report), I was tasked with retelling the organization's most insightful data and impacts into a compelling visual narrative on the web.\n\n Role: Designer, Art Director\n Web Design by Lightboard",
+      research: "→ Challenge\n The challenge was to create a different look and feel from the [previous year's impact report](https://www.democracy.works/2023-impact-report), while maintaining brand consistency dependent on a limited palette of pink, blue, and teal. It was also critical to ensure that there weren't walls of text so users could continue reading and reduce bounce rate.",
       result: "→ Solution\n The solution was to lead with flat vector illustrations with compelling scroll animations that emphasized the importance of voting. By drawing on familiar motifs and visual cues surrounding civic engagement, each section offers a holistic overview of the insight.",
       impact: "→ Impact\n The impact report was successful in its reach and storytelling, with positive feedback from stakeholders and board members. Post social launch, we saw a 169% increase in LinkedIn engagement rate as well as 5K new active visitors on the Democracy Works website.",
       image1: "/images/dw-01.png",
@@ -39,7 +42,10 @@ const Portfolio = () => {
       title: "TurboVote", 
       x: 25, 
       y: 25, 
-      categories: ["Marketing"], // ASSIGN CATEGORIES HERE
+      categories: ["Marketing"],
+      year: "2023 - ongoing",
+      role: "Illustrator, Designer",
+      deliverables: "illustration, product design",
       image: "/images/TV-01.png",
       description: "→ Intro\n [TurboVote](https://turbovote.org/) is a digital platform that offers a personalized voting guidance to show voters what is at stake. Various organizations in private and public sectors partner with TurboVote to engage voters through customized embeds on their sites. I was tasked with creating a new suite of illustrations for the TurboVote homepage  to elevate the voter homepage experience.\n\n Role: Illustrator, Designer\n Product Design by Ryan Pierson",
       research: "→ Challenge\n The challenge was representing a diverse range of people icons that showcased an inclusive range of age, race, and gender. It was also challenging to translate niche voter vocabulary into a visual context relevant to each action.",
@@ -54,10 +60,13 @@ const Portfolio = () => {
       title: "50+1 Strategies", 
       x: 15, 
       y: 40, 
-      categories: ["Identity"], // ASSIGN CATEGORIES HERE
+      categories: ["Identity"],
+      year: "2022",
+      role: "Lead Designer, Art Director",
+      deliverables: "brand identity, web design",
       image: "/images/50p1-main.png",
       description: "→ Intro\n [50+1 Strategies](https://50p1.com/) was a political consulting firm based in San Francisco that operated for 13 years to build  local campaigns and grassroots movements surrounding progressive advocacy. In their 11th year, I was tasked with their rebrand and art direction of the new website.\n\n Role: Lead Designer, Art Director\n Web Design by Apollo Artistry", 
-      research: "→ Challenge\n The challenge was dissecting the firm’s title and old logo of the numbers (50, 1), signifying a tipping point towards the majority. There was also a need to create a timeless logo symbolic of dynamic, lasting movement for and towards change.",
+      research: "→ Challenge\n The challenge was dissecting the firm's title and old logo of the numbers (50, 1), signifying a tipping point towards the majority. There was also a need to create a timeless logo symbolic of dynamic, lasting movement for and towards change.",
       result: "→ Solution\n The solution was utilizing the plus sign that served as the joining motif of the two numbers. We arrived at a logo that considers the balance of youthful power as well as dynamism and strength. The layered plus sign offers an open-ended visual interpretation that alludes to windows or doors and portals of change to the other side.",
       impact: "→ Impact\n The new brand identity received overwhelmingly positive feedback from past and present clients with opportunities for new collaborations. The rebrand launch drove website traffic by 147% with a 28% increase in newsletter subscribers.",
       image1: "/images/50p1-01.png",
@@ -69,11 +78,14 @@ const Portfolio = () => {
       title: "Schema Acquisition", 
       x: 80, 
       y: 35, 
-      categories: ["Identity"], // ASSIGN CATEGORIES HERE
+      categories: ["Identity"],
+      year: "2024 - ongoing",
+      role: "Creative director, designer",
+      deliverables: "brand identity, writing",
       image: "/images/schema-main.gif",
       description: "→ Intro\n [Schema Acquisition](https://schemacquisition.substack.com/) is a personal Substack project exploring relation-mapping the unlikely to engender new abstractions. Garnering schemas on my personal relationship with the digital landscape and studying digital-physical porosity, the project aims to research alternative appropriations of platforms and creative subversion online.", 
       research: "→ Research/Strategy\n Schema acquisition is a cognitive learning theory that I came across during my Neuroscience thesis. It is loosely defined as linking various elements to form a recognizable pattern to engender new abstractions or understanding through a class of structure (think: windows, wheels, seats, etc… = car!). I believe learning about our selfhood and personal world-building is all about big and small experiences of schema acquisition. I wanted the logo to reflect the process of linkage and multiplicity to create new meanings and systems.",
-      result: "→ Logo Identity\n The brand identity is built around simple vector points and lines to convey joinment, connection, and gathering. The publication logo is a cursor to signify movement and autonomous direction in the exploration of schema gathering and joinage (whether it be adding or removing to the vector line). Each post is accompanied by “schema(s)” or a visual interpretation of the piece as graphs, charts, doodles, etc.", 
+      result: "→ Logo Identity\n The brand identity is built around simple vector points and lines to convey joinment, connection, and gathering. The publication logo is a cursor to signify movement and autonomous direction in the exploration of schema gathering and joinage (whether it be adding or removing to the vector line). Each post is accompanied by \"schema(s)\" or a visual interpretation of the piece as graphs, charts, doodles, etc.", 
       image1: "/images/schema-01.png",
       image2: "/images/schema-02.png",
       image3: "/images/schema-03.png"
@@ -86,14 +98,16 @@ const Portfolio = () => {
       categories: ["Web"],
       externalLink: "https://thehtml.review/04/",
       image: "/images/ascii-main.png"
-      // No need for description, research, image1, image2
     },
     { 
       id: 6, 
       title: "Internet Phone Book", 
       x: 90, 
       y: 80, 
-      categories: ["Print"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"],
+      year: "2024",
+      role: "Writer",
+      deliverables: "essay, print",
       image: "/images/ipb.png",
       description: "→ Intro\n [Internet Phone Book](https://internetphonebook.net/), as quoted from the website, is 'an annual publication for exploring the vast poetic web, featuring essays, musings and a directory with the personal websites of hundreds of designers, developers, writers, curators, and educators.' My essay, [A History of My Websites](https://schemacquisition.substack.com/p/9-a-history-of-my-websites), first published on my Substack, is featured on pg. 153 of the publication.", 
       image1: "/images/ipb-01.png",
@@ -110,14 +124,16 @@ const Portfolio = () => {
       categories: ["Web"],
       externalLink: "https://www.youtube.com/watch?v=WCObWm1_5cg&feature=youtu.be",
       image: "/images/wedream-main.png",
-      // No need for description, research, image1, image2
     },
     { 
       id: 8, 
       title: "Alternative Typographic Histories", 
       x: 65, 
       y: 60, 
-      categories: ["Print"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"],
+      year: "2024",
+      role: "Designer, Researcher",
+      deliverables: "zine, poster",
       image: "/images/alt-type.gif",
       description: "→ Intro\n Participating in [School for Poetic Computation (SFPC)'s](https://sfpc.study/) Alternative Typographic Histories class, I conducted an in-depth investigation into jacquard weaving patterns and textile work as a form of alternative language. Jacquard weaving modernized the weaving process and introduced the binary code through its punch card system. Using the punch versus the unpunched system to weave intricate patterns, I wished to study the data of language in a similar format.\n\n Current day, we rely on technologies to archive and utilize systems of language effectively and typing can be seen as a main tool for digital communication. How can type data store meaning beyond what is visible to the eye? What is an alternative interpretation of type language apart from its current usage? I unraveled the encoded keyboard alphabets as ASCII/UTF-8 code of binary strings (e.g. a = 01100001) to write a poem in a punchcard system. This encoded, alternative interpretation of the poem also honors the notion of patternmaking - like its own pixel art, the punchcard poem can be used for knitting, crocheting, and/or weaving to translate into textile art with a hidden message. \n\nThe final project was showcased as a class zine and a poster.",
       research: "→ Mentors\n Levi Hammett, Hind Al Saad",
@@ -129,7 +145,10 @@ const Portfolio = () => {
       title: "Kernel Issue 5 Zine", 
       x: 40, 
       y: 80, 
-      categories: ["Print"], // ASSIGN CATEGORIES HERE
+      categories: ["Print"],
+      year: "2024",
+      role: "Designer",
+      deliverables: "riso zine, postcard",
       image: "/images/kernel.png",
       description: "→ Intro\n [Kernel Magazine](https://www.kernelmag.io/) is an annual print publication by [Reboot](https://joinreboot.org/), a community reimagining techno-optimism for a better collective future.\n\n For their fifth issue launch, I collaborated with [Connie Liu](https://connie.surf/) to create a special riso zine consisting of a paper ruler, 2 print Reboot features, and a postcard.\n\n The zines were sold alongside the book at the issue launch at Gray Area in San Francisco.",
       image1: "/images/kernel-01.png",
@@ -137,6 +156,9 @@ const Portfolio = () => {
       image3: "/images/kernel-03.png"
     },
   ];
+
+  // Get navigable projects (those without externalLink)
+  const navigableProjects = projects.filter(p => !p.externalLink);
 
   // ============================================
   // INFO PAGE - Full page with 3 columns
@@ -241,206 +263,214 @@ const Portfolio = () => {
   }
 
   // ============================================
+  // HELPER: Render text with markdown-style links
+  // ============================================
+  const renderTextWithLinks = (text) => {
+    if (!text) return null;
+    return text.split('\n\n').map((paragraph, index) => (
+      <p key={index} className="mb-5">
+        {paragraph.split('\n').map((line, i) => {
+          const parts = line.split(/(\[.*?\]\(.*?\))/g);
+          return (
+            <span key={i}>
+              {parts.map((part, j) => {
+                const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+                if (linkMatch) {
+                  return (
+                    <a
+                      key={j}
+                      href={linkMatch[2]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:opacity-50 transition-opacity"
+                    >
+                      {linkMatch[1]}
+                    </a>
+                  );
+                }
+                return <span key={j}>{part}</span>;
+              })}
+              {i < paragraph.split('\n').length - 1 && <br />}
+            </span>
+          );
+        })}
+      </p>
+    ));
+  };
+
+  // ============================================
+  // HELPER: Navigate to prev/next project
+  // ============================================
+  const navigateProject = (direction) => {
+    const currentIndex = navigableProjects.findIndex(p => p.id === selectedProject.id);
+    let newIndex;
+    if (direction === 'prev') {
+      newIndex = currentIndex <= 0 ? navigableProjects.length - 1 : currentIndex - 1;
+    } else {
+      newIndex = currentIndex >= navigableProjects.length - 1 ? 0 : currentIndex + 1;
+    }
+    setSelectedProject(navigableProjects[newIndex]);
+    window.scrollTo(0, 0);
+  };
+
+  // ============================================
+  // HELPER: Prev/Next navigation buttons
+  // ============================================
+  const PrevNextNav = () => (
+    <div className="flex justify-between items-center px-6">
+      <button
+        onClick={() => navigateProject('prev')}
+        className="text-sm hover:opacity-50 transition-opacity"
+      >
+        ← previous project
+      </button>
+      <button
+        onClick={() => navigateProject('next')}
+        className="text-sm hover:opacity-50 transition-opacity"
+      >
+        next project →
+      </button>
+    </div>
+  );
+
+  // ============================================
   // PROJECT DETAIL PAGE
   // ============================================
   if (selectedProject && !showInfo) {
     return (
       <div className="min-h-screen w-screen bg-white overflow-y-auto">
-        {/* Header */}
+        {/* Header - matches homepage */}
         <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center">
-          <button
-            onClick={() => setSelectedProject(null)}
-            className="text-sm hover:opacity-50"
+          <button 
+            onClick={() => {
+              setSelectedProject(null);
+              setActiveFilter(null);
+            }}
+            className="text-sm hover:opacity-50 transition-opacity"
           >
-            ← Back
+            Eileen Ahn
           </button>
-          {/* <div className="text-sm">Eileen Ahn</div> */}
           <button
             onClick={() => setShowInfo(true)}
             className="text-sm hover:opacity-50"
           >
-            Info
+            info
           </button>
         </div>
 
-        {/* Project Content - Now pulls from PROJECTS DATA array */}
-        {/* UPDATED: 2-column layout - 1/3 text (left) + 2/3 images (right) */}
-        <div className="pt-24 pb-20 px-8">
-          <div className="flex gap-10 max-w-7xl mx-auto">
+        {/* Project Header - Centered title and metadata */}
+        <div className="pt-20 pb-4 px-6 text-center">
+          <h1 className="text-lg font-medium uppercase tracking-wide mb-1">{selectedProject.title}</h1>
+          {selectedProject.year && (
+            <p className="text-sm text-gray-500 mb-0.5">{selectedProject.year}</p>
+          )}
+          {selectedProject.role && (
+            <p className="text-sm text-gray-500 mb-0.5">Role: {selectedProject.role}</p>
+          )}
+          {selectedProject.deliverables && (
+            <p className="text-sm text-gray-500">Deliverables: {selectedProject.deliverables}</p>
+          )}
+        </div>
+
+        {/* Top Prev/Next Navigation */}
+        <div className="px-2 mb-6">
+          <PrevNextNav />
+        </div>
+
+        {/* Content Box - Rounded white rectangle */}
+        <div className="px-6 pb-10">
+          <div className="bg-[#fefff7] border border-black rounded-lg p-8 max-w-8xl mx-auto">
             
-            {/* LEFT COLUMN - 1/3 width - Text content */}
-            <div className="w-1/3 flex-shrink-0">
-            {/* Project Title */}
-            <h1 className="text-2xl mb-6">{selectedProject.title}</h1>
-              
-            {/* UPDATED: Now supports clickable links */}
-            <div className="text-sm leading-relaxed">
-                {selectedProject.description.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="mb-5">
-                    {paragraph.split('\n').map((line, i) => {
-                      // Convert [text](url) format to clickable links
-                      const parts = line.split(/(\[.*?\]\(.*?\))/g);
-                      return (
-                        <span key={i}>
-                          {parts.map((part, j) => {
-                            const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
-                            if (linkMatch) {
-                              return (
-                                <a
-                                  key={j}
-                                  href={linkMatch[2]}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="underline hover:opacity-50 transition-opacity"
-                                >
-                                  {linkMatch[1]}
-                                </a>
-                              );
-                            }
-                            return <span key={j}>{part}</span>;
-                          })}
-                          {i < paragraph.split('\n').length - 1 && <br />}
-                        </span>
-                      );
-                    })}
-                  </p>
-                ))}
+            {/* Section 1: Hero Image - Full width */}
+            {selectedProject.image && (
+              <div className="w-full">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title}
+                  className="w-full rounded-lg"
+                />
               </div>
+            )}
 
-              {/* Research Section */}
-              {/* UPDATED: Now supports clickable links */}
-              {selectedProject.research && (
-                <div className="text-sm leading-relaxed">
-                  {selectedProject.research.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-5">
-                      {paragraph.split('\n').map((line, i) => {
-                        // Convert [text](url) format to clickable links
-                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
-                        return (
-                          <span key={i}>
-                            {parts.map((part, j) => {
-                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
-                              if (linkMatch) {
-                                return (
-                                  <a
-                                    key={j}
-                                    href={linkMatch[2]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline hover:opacity-50 transition-opacity"
-                                  >
-                                    {linkMatch[1]}
-                                  </a>
-                                );
-                              }
-                              return <span key={j}>{part}</span>;
-                            })}
-                            {i < paragraph.split('\n').length - 1 && <br />}
-                          </span>
-                        );
-                      })}
-                    </p>
-                  ))}
-                </div>
-              )}
+            {/* Dotted separator */}
+            <div className="border-t border-dotted border-gray-300 my-8" />
 
-              {/* Result Section */}
-              {/* UPDATED: Now supports clickable links */}
-              {selectedProject.result && (
-                <div className="text-sm leading-relaxed">
-                  {selectedProject.result.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-5">
-                      {paragraph.split('\n').map((line, i) => {
-                        // Convert [text](url) format to clickable links
-                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
-                        return (
-                          <span key={i}>
-                            {parts.map((part, j) => {
-                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
-                              if (linkMatch) {
-                                return (
-                                  <a
-                                    key={j}
-                                    href={linkMatch[2]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline hover:opacity-50 transition-opacity"
-                                  >
-                                    {linkMatch[1]}
-                                  </a>
-                                );
-                              }
-                              return <span key={j}>{part}</span>;
-                            })}
-                            {i < paragraph.split('\n').length - 1 && <br />}
-                          </span>
-                        );
-                      })}
-                    </p>
-                  ))}
-                </div>
-              )}
-
-              {/* Impact Section */}
-              {/* UPDATED: Now supports clickable links */}
-              {selectedProject.impact && (
-                <div className="text-sm leading-relaxed">
-                  {selectedProject.impact.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-5">
-                      {paragraph.split('\n').map((line, i) => {
-                        // Convert [text](url) format to clickable links
-                        const parts = line.split(/(\[.*?\]\(.*?\))/g);
-                        return (
-                          <span key={i}>
-                            {parts.map((part, j) => {
-                              const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
-                              if (linkMatch) {
-                                return (
-                                  <a
-                                    key={j}
-                                    href={linkMatch[2]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline hover:opacity-50 transition-opacity"
-                                  >
-                                    {linkMatch[1]}
-                                  </a>
-                                );
-                              }
-                              return <span key={j}>{part}</span>;
-                            })}
-                            {i < paragraph.split('\n').length - 1 && <br />}
-                          </span>
-                        );
-                      })}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* RIGHT COLUMN - 2/3 width - Images */}
-            <div className="w-2/3 space-y-4">
-              {/* Main Project Image */}
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title}
-                className="w-full"
-              />
-
-              {/* Other Images */}
-              <img src={selectedProject.image1} alt="" className="w-full"/>
-              <img src={selectedProject.image2} alt="" className="w-full"/>
-              <img src={selectedProject.image3} alt="" className="w-full"/>
-
-              {/* Two Column Images Grid */}
-              <div className="grid grid-cols-2 gap-2">
-                <img src={selectedProject.image4} alt="" className="w-full" />
-                <img src={selectedProject.image5} alt="" className="w-full" />
+            {/* Section 2: Two columns - Text left, Image right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="text-sm leading-relaxed text-gray-600">
+                {renderTextWithLinks(selectedProject.description)}
+              </div>
+              <div>
+                {selectedProject.image1 && (
+                  <img src={selectedProject.image1} alt="" className="w-full rounded-lg" />
+                )}
               </div>
             </div>
+
+            {/* Dotted separator */}
+            <div className="border-t border-dotted border-gray-300 my-8" />
+
+            {/* Section 3: Full width image */}
+            {selectedProject.image2 && (
+              <div className="w-full">
+                <img src={selectedProject.image2} alt="" className="w-full rounded-lg" />
+              </div>
+            )}
+
+            {/* Dotted separator */}
+            {selectedProject.image2 && (
+              <div className="border-t border-dotted border-gray-300 my-8" />
+            )}
+
+            {/* Section 4: Two columns - Image left, Text right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                {selectedProject.image3 && (
+                  <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
+                )}
+              </div>
+              <div className="text-sm leading-relaxed text-gray-600">
+                {renderTextWithLinks(selectedProject.research)}
+                {renderTextWithLinks(selectedProject.result)}
+              </div>
+            </div>
+
+            {/* Dotted separator */}
+            <div className="border-t border-dotted border-gray-300 my-8" />
+
+            {/* Section 5: Full width image */}
+            {selectedProject.image4 && (
+              <div className="w-full">
+                <img src={selectedProject.image4} alt="" className="w-full rounded-lg" />
+              </div>
+            )}
+
+            {/* Additional image if exists */}
+            {selectedProject.image5 && (
+              <>
+                <div className="border-t border-dotted border-gray-300 my-8" />
+                <div className="w-full">
+                  <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
+                </div>
+              </>
+            )}
+
+            {/* Impact section if exists */}
+            {selectedProject.impact && (
+              <>
+                <div className="border-t border-dotted border-gray-300 my-8" />
+                <div className="text-sm leading-relaxed text-gray-600 max-w-xl">
+                  {renderTextWithLinks(selectedProject.impact)}
+                </div>
+              </>
+            )}
 
           </div>
+        </div>
+
+        {/* Bottom Prev/Next Navigation */}
+        <div className="px-2 pb-6">
+          <PrevNextNav />
         </div>
       </div>
     );
