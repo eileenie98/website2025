@@ -204,7 +204,7 @@ const Portfolio = () => {
             </div>
 
             {/* Column 2 - EDIT SECOND COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-gray-600">
+            <div className="text-sm leading-relaxed text-black">
               <p className="mb-4">
                 Current Infatuations: <br/>
                 &#8594; Song on repeat is Human Happens by Magdalena Bay <br/>
@@ -215,7 +215,7 @@ const Portfolio = () => {
             </div>
 
             {/* Column 3 - EDIT THIRD COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-gray-600">
+            <div className="text-sm leading-relaxed text-black">
               <p className="mb-4">
               ohleenieahn [at] gmail [dot] com
               </p>
@@ -340,13 +340,13 @@ const Portfolio = () => {
     return (
       <div className="min-h-screen w-screen bg-white overflow-y-auto">
         {/* Header - matches homepage */}
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center">
+        <div className="fixed top-0 left-0 right-0 z-40 bg-white p-6 flex justify-between items-center">
           <button 
             onClick={() => {
               setSelectedProject(null);
               setActiveFilter(null);
             }}
-            className="text-sm hover:opacity-50 transition-opacity"
+            className= "text-sm hover:opacity-50 transition-opacity"
           >
             Eileen Ahn
           </button>
@@ -362,13 +362,13 @@ const Portfolio = () => {
         <div className="pt-20 pb-4 px-6 text-center">
           <h1 className="text-lg font-medium uppercase tracking-wide mb-1">{selectedProject.title}</h1>
           {selectedProject.year && (
-            <p className="text-sm text-gray-500 mb-0.5">{selectedProject.year}</p>
+            <p className="text-sm text-black mb-0.5">{selectedProject.year}</p>
           )}
           {selectedProject.role && (
-            <p className="text-sm text-gray-500 mb-0.5">Role: {selectedProject.role}</p>
+            <p className="text-sm text-black mb-0.5">Role: {selectedProject.role}</p>
           )}
           {selectedProject.deliverables && (
-            <p className="text-sm text-gray-500">Deliverables: {selectedProject.deliverables}</p>
+            <p className="text-sm text-black">Deliverables: {selectedProject.deliverables}</p>
           )}
         </div>
 
@@ -393,11 +393,11 @@ const Portfolio = () => {
             )}
 
             {/* Dotted separator */}
-            <div className="border-t border-dotted border-gray-300 my-8" />
+            <div className="border-t border-2 border-dotted border-black my-8" />
 
             {/* Section 2: Two columns - Text left, Image right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="text-sm leading-relaxed text-gray-600">
+              <div className="text-sm leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.description)}
               </div>
               <div>
@@ -408,7 +408,7 @@ const Portfolio = () => {
             </div>
 
             {/* Dotted separator */}
-            <div className="border-t border-dotted border-gray-300 my-8" />
+            <div className="border-t border-2 border-dotted border-black my-8" />
 
             {/* Section 3: Full width image */}
             {selectedProject.image2 && (
@@ -419,7 +419,7 @@ const Portfolio = () => {
 
             {/* Dotted separator */}
             {selectedProject.image2 && (
-              <div className="border-t border-dotted border-gray-300 my-8" />
+              <div className="border-t border-dotted border-black my-8" />
             )}
 
             {/* Section 4: Two columns - Image left, Text right */}
@@ -429,14 +429,14 @@ const Portfolio = () => {
                   <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
                 )}
               </div>
-              <div className="text-sm leading-relaxed text-gray-600">
+              <div className="text-sm leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.research)}
                 {renderTextWithLinks(selectedProject.result)}
               </div>
             </div>
 
             {/* Dotted separator */}
-            <div className="border-t border-dotted border-gray-300 my-8" />
+            <div className="border-t border-dotted border-black my-8" />
 
             {/* Section 5: Full width image */}
             {selectedProject.image4 && (
@@ -448,7 +448,7 @@ const Portfolio = () => {
             {/* Additional image if exists */}
             {selectedProject.image5 && (
               <>
-                <div className="border-t border-dotted border-gray-300 my-8" />
+                <div className="border-t border-dotted border-black my-8" />
                 <div className="w-full">
                   <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
                 </div>
@@ -458,8 +458,8 @@ const Portfolio = () => {
             {/* Impact section if exists */}
             {selectedProject.impact && (
               <>
-                <div className="border-t border-dotted border-gray-300 my-8" />
-                <div className="text-sm leading-relaxed text-gray-600 max-w-xl">
+                <div className="border-t border-dotted border-black my-8" />
+                <div className="text-sm leading-relaxed text-black max-w-xl">
                   {renderTextWithLinks(selectedProject.impact)}
                 </div>
               </>
@@ -480,34 +480,34 @@ const Portfolio = () => {
   // MAIN LANDING PAGE
   // ============================================
   return (
-    <div className="relative h-screen w-screen bg-white overflow-hidden">
+    <div className="relative h-screen w-screen bg-transparent overflow-hidden">
       
       {/* Center Cross Lines - Horizontal and Vertical */}
       <div className="absolute inset-0 pointer-events-none z-10">
         {/* Horizontal line through center */}
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-300" />
+        <div className="absolute top-1/2 left-0 right-0 h-px bg-black" />
         {/* Vertical line through center */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300" />
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-black" />
       </div>
       
       {/* AXIS LABELS - Fixed words at center of each side */}
       {/* Left center - VERTICAL TEXT */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400 rotate-180" style={{ writingMode: 'vertical-lr' }}>
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 text-xs mix-blend-difference text-gray-400 rotate-180" style={{ writingMode: 'vertical-lr' }}>
         DESIGN
       </div>
       
       {/* Right center - VERTICAL TEXT */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 text-xs text-gray-400" style={{ writingMode: 'vertical-rl' }}>
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 text-xs mix-blend-difference text-gray-400" style={{ writingMode: 'vertical-rl' }}>
         WRITING
       </div>
       
       {/* Top center */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 text-xs text-gray-400">
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 text-xs mix-blend-difference text-gray-400">
         DIGITAL
       </div>
       
       {/* Bottom center */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 text-xs text-gray-400">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 text-xs mix-blend-difference text-gray-400">
         MATERIAL
       </div>
 
@@ -519,7 +519,9 @@ const Portfolio = () => {
           setShowInfo(false);
           setActiveFilter(null);
         }}
-        className="fixed top-6 left-6 z-50 text-sm hover:opacity-50 transition-opacity"
+        className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:opacity-50 transition-opacity"
+        
+        // "fixed top-6 left-6 z-50 text-sm hover:opacity-50 transition-opacity"
       >
         Eileen Ahn
       </button>
@@ -527,14 +529,14 @@ const Portfolio = () => {
       {/* Top right: Info Button */}
       <button
         onClick={() => setShowInfo(true)}
-        className="fixed top-6 right-6 z-50 text-sm hover:opacity-50"
+        className="fixed top-6 right-6 z-30 text-sm mix-blend-difference text-gray-400 hover:opacity-50 transition-opacity"
       >
         Info
       </button>
 
       {/* Bottom left: Filter Categories - EDIT YOUR CATEGORIES HERE */}
       {/* UPDATED: Now clickable to filter projects */}
-      <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1">
+      <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1 mix-blend-difference">
         <div 
           className={`cursor-pointer transition-colors ${
             activeFilter === "Identity" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
@@ -569,15 +571,8 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Bottom right: Archive & TXT Links
-      <div className="fixed bottom-6 right-6 z-50 text-xs space-y-1 text-gray-400">
-        <div className="hover:text-black cursor-pointer">Archive</div>
-        <div className="hover:text-black cursor-pointer">TXT</div>
-      </div> */}
 
       {/* Project Dots on X,Y Coordinates */}
-      {/* UPDATED: Dots now gray out when filter is active and they don't match */}
-       {/* UPDATED: Dots with externalLink open URL in new tab instead of inner page */}
        <div className="absolute inset-0">
         {projects.map((project) => {
           // Check if this project matches the active filter
@@ -604,6 +599,7 @@ const Portfolio = () => {
                 }
               }}
             >
+
               <div
                 className={`w-3.5 h-3.5 rounded-full transition-all ${
                   hoveredProject?.id === project.id ? 'scale-150' : ''
@@ -618,20 +614,27 @@ const Portfolio = () => {
 
       {/* Center Hover Image Preview */}
       {hoveredProject && (
-        <div
-          className="fixed z-40 pointer-events-none"
-          style={{
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)'
-          }}
-        >
-          <img
-            src={hoveredProject.image}
-            alt={hoveredProject.title}
-            className="w-96 h-96 object-cover"
-          />
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+        <img
+          src={hoveredProject.image}
+          alt={hoveredProject.title}
+          className="w-full h-full object-cover"
+        />
         </div>
+        // <div
+        //   className="fixed z-40 pointer-events-none"
+        //   style={{
+        //     left: '50%',
+        //     top: '50%',
+        //     transform: 'translate(-50%, -50%)'
+        //   }}
+        // >
+        //   <img
+        //     src={hoveredProject.image}
+        //     alt={hoveredProject.title}
+        //     className="w-96 h-96 object-cover"
+        //   />
+        // </div>
       )}
     </div>
   );
