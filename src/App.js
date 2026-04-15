@@ -20,10 +20,10 @@ const Portfolio = () => {
   const projects = [
     { 
       id: 1, 
-      title: "Democracy Works Impact Report", 
+      title: "Democracy Works", 
       x: 35, 
       y: 45, 
-      categories: ["Marketing"],
+      categories: ["Identity"],
       year: "2024",
       role: "Designer, Art Director",
       deliverables: "web design, illustration",
@@ -42,7 +42,7 @@ const Portfolio = () => {
       title: "TurboVote", 
       x: 25, 
       y: 25, 
-      categories: ["Marketing"],
+      categories: ["Identity"],
       year: "2023 - ongoing",
       role: "Illustrator, Designer",
       deliverables: "illustration, product design",
@@ -60,7 +60,7 @@ const Portfolio = () => {
       title: "50+1 Strategies", 
       x: 15, 
       y: 40, 
-      categories: ["Identity"],
+      categories: ["Identity", "Web"],
       year: "2022",
       role: "Lead Designer, Art Director",
       deliverables: "brand identity, web design",
@@ -78,7 +78,7 @@ const Portfolio = () => {
       title: "Schema Acquisition", 
       x: 80, 
       y: 35, 
-      categories: ["Identity"],
+      categories: ["Identity", "Personal"],
       year: "2024 - ongoing",
       role: "Creative director, designer",
       deliverables: "brand identity, writing",
@@ -95,7 +95,7 @@ const Portfolio = () => {
       title: "ASCII Bedroom Memoir",
       x: 55,
       y: 10,
-      categories: ["Web"],
+      categories: ["Web", "Personal"],
       externalLink: "https://thehtml.review/04/",
       image: "/images/ascii-main.png"
     },
@@ -104,7 +104,7 @@ const Portfolio = () => {
       title: "Internet Phone Book", 
       x: 90, 
       y: 80, 
-      categories: ["Print"],
+      categories: ["Print", "Personal"],
       year: "2024",
       role: "Writer",
       deliverables: "essay, print",
@@ -116,21 +116,21 @@ const Portfolio = () => {
       image4: "/images/ipb-04.png",
       image5: "/images/ipb-05.png"
     },
-    {
-      id: 7,
-      title: "WeDream",
-      x: 43,
-      y: 20,
-      categories: ["Web"],
-      externalLink: "https://www.youtube.com/watch?v=WCObWm1_5cg&feature=youtu.be",
-      image: "/images/wedream-main.png",
-    },
+    // {
+    //   id: 7,
+    //   title: "WeDream",
+    //   x: 43,
+    //   y: 20,
+    //   categories: ["Web"],
+    //   externalLink: "https://www.youtube.com/watch?v=WCObWm1_5cg&feature=youtu.be",
+    //   image: "/images/wedream-main.png",
+    // },
     { 
-      id: 8, 
+      id: 7, 
       title: "Alternative Typographic Histories", 
       x: 65, 
       y: 60, 
-      categories: ["Print"],
+      categories: ["Print", "Personal"],
       year: "2024",
       role: "Designer, Researcher",
       deliverables: "zine, poster",
@@ -141,11 +141,11 @@ const Portfolio = () => {
       image2: "/images/alt-type-02.png"
     },
     { 
-      id: 9, 
+      id: 8, 
       title: "Kernel Issue 5 Zine", 
       x: 40, 
       y: 80, 
-      categories: ["Print"],
+      categories: ["Print", "Personal"],
       year: "2024",
       role: "Designer",
       deliverables: "riso zine, postcard",
@@ -175,13 +175,13 @@ const Portfolio = () => {
             setSelectedProject(null); // FIXED: Also clear selected project
             setActiveFilter(null);
           }}
-          className="text-sm hover:opacity-50 transition-opacity"
+          className="text-sm hover:text-purple-500"
         >
           Eileen Ahn
         </button>
         <button
           onClick={() => setShowInfo(false)}
-          className="text-sm hover:opacity-50"
+          className="text-sm hover:text-purple-500"
         >
           ✕ Close
         </button>
@@ -192,7 +192,7 @@ const Portfolio = () => {
           <div className="h-full max-w-7xl mx-auto grid grid-cols-3 gap-12">
             
             {/* Column 1 - EDIT FIRST COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-gray-600">
+            <div className="text-sm leading-relaxed text-black">
               <p className="mb-4">
               I am a Korean-American designer, writer, and creative technologist based in San Francisco.
               Activated by inquiries rooted in liberation and autonomy, my art and research practice focus on
@@ -320,13 +320,13 @@ const Portfolio = () => {
     <div className="flex justify-between items-center px-6">
       <button
         onClick={() => navigateProject('prev')}
-        className="text-sm hover:opacity-50 transition-opacity"
+        className="text-sm hover:text-purple-500"
       >
         ← previous project
       </button>
       <button
         onClick={() => navigateProject('next')}
-        className="text-sm hover:opacity-50 transition-opacity"
+        className="text-sm hover:opacity-50 hover:text-purple-500"
       >
         next project →
       </button>
@@ -346,13 +346,13 @@ const Portfolio = () => {
               setSelectedProject(null);
               setActiveFilter(null);
             }}
-            className= "text-sm hover:opacity-50 transition-opacity"
+            className= "text-sm hover:text-purple-500"
           >
             Eileen Ahn
           </button>
           <button
             onClick={() => setShowInfo(true)}
-            className="text-sm hover:opacity-50"
+            className="text-sm hover:text-purple-500"
           >
             info
           </button>
@@ -393,7 +393,7 @@ const Portfolio = () => {
             )}
 
             {/* Dotted separator */}
-            <div className="border-t border-2 border-dotted border-black my-8" />
+            <div className="border-t-2 border-dotted border-black my-8" />
 
             {/* Section 2: Two columns - Text left, Image right */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -408,7 +408,7 @@ const Portfolio = () => {
             </div>
 
             {/* Dotted separator */}
-            <div className="border-t border-2 border-dotted border-black my-8" />
+            <div className="border-t-2 border-dotted border-black my-8" />
 
             {/* Section 3: Full width image */}
             {selectedProject.image2 && (
@@ -419,7 +419,7 @@ const Portfolio = () => {
 
             {/* Dotted separator */}
             {selectedProject.image2 && (
-              <div className="border-t border-dotted border-black my-8" />
+              <div className="border-t-2 border-dotted border-black my-8" />
             )}
 
             {/* Section 4: Two columns - Image left, Text right */}
@@ -436,7 +436,7 @@ const Portfolio = () => {
             </div>
 
             {/* Dotted separator */}
-            <div className="border-t border-dotted border-black my-8" />
+            <div className="border-t-2 border-dotted border-black my-8" />
 
             {/* Section 5: Full width image */}
             {selectedProject.image4 && (
@@ -448,7 +448,7 @@ const Portfolio = () => {
             {/* Additional image if exists */}
             {selectedProject.image5 && (
               <>
-                <div className="border-t border-dotted border-black my-8" />
+                <div className="border-t-2 border-dotted border-black my-8" />
                 <div className="w-full">
                   <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
                 </div>
@@ -458,7 +458,7 @@ const Portfolio = () => {
             {/* Impact section if exists */}
             {selectedProject.impact && (
               <>
-                <div className="border-t border-dotted border-black my-8" />
+                <div className="border-t-2 border-dotted border-black my-8" />
                 <div className="text-sm leading-relaxed text-black max-w-xl">
                   {renderTextWithLinks(selectedProject.impact)}
                 </div>
@@ -519,17 +519,14 @@ const Portfolio = () => {
           setShowInfo(false);
           setActiveFilter(null);
         }}
-        className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:opacity-50 transition-opacity"
-        
-        // "fixed top-6 left-6 z-50 text-sm hover:opacity-50 transition-opacity"
-      >
+        className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500">
         Eileen Ahn
       </button>
 
       {/* Top right: Info Button */}
       <button
         onClick={() => setShowInfo(true)}
-        className="fixed top-6 right-6 z-30 text-sm mix-blend-difference text-gray-400 hover:opacity-50 transition-opacity"
+        className="fixed top-6 right-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500"
       >
         Info
       </button>
@@ -543,15 +540,15 @@ const Portfolio = () => {
           }`}
           onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
         >
-          Identity
+          Brand Identity
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Marketing" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
+            activeFilter === "Web" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Marketing" ? null : "Marketing")}
+          onClick={() => setActiveFilter(activeFilter === "Web" ? null : "Web")}
         >
-          Marketing
+          Web
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
@@ -563,11 +560,11 @@ const Portfolio = () => {
         </div>
         <div 
           className={`cursor-pointer transition-colors ${
-            activeFilter === "Web" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
+            activeFilter === "Personal" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Web" ? null : "Web")}
+          onClick={() => setActiveFilter(activeFilter === "Personal" ? null : "Personal")}
         >
-          Web/Video
+          Personal
         </div>
       </div>
 
