@@ -196,10 +196,11 @@ const Portfolio = () => {
               <p className="mb-4">
               I am a Korean-American designer, writer, and creative technologist based in San Francisco.
               Activated by inquiries rooted in liberation and autonomy, my art and research practice focus on
-              alternative appropriations of digital tools and systems as forms of activism and resistance.
+              alternative appropriations of digital tools and systems as forms of activism and resistance. I love schemas,
+              brutalist frameworks, cats, and crunchy peanut butter. 
               </p>
               <p className="mb-4">
-              I currently work as a marketing brand designer at a civic tech nonprofit to make voting more accessible.
+              I currently work as a brand designer at a civic tech nonprofit to make voting more accessible.
               </p>
             </div>
 
@@ -207,10 +208,31 @@ const Portfolio = () => {
             <div className="text-sm leading-relaxed text-black">
               <p className="mb-4">
                 Current Infatuations: <br/>
-                &#8594; Song on repeat is Human Happens by Magdalena Bay <br/>
-                &#8594; The last drink I sipped is a warm glass of milk (yes, I am a proud whole milk drinker leave me alone) <br/>
-                &#8594; A restaurant I want to revisit is Kevin & Chris's Noodle House on Irving <br/>
-                &#8594; I am slowly making my way through 600 pages of Death's End by Cixin Liu
+                &#8594; Song on repeat is ça pik un peu quand même by Miki <br/>
+                &#8594; Failing Butter & Crumble's Tuesday box drops <br/>
+                &#8594; Experimenting to wear more color instead of all black <br/>
+                &#8594; Finished Ted Chiang's Stories of Your Life and Others
+              </p>
+              <p className="mb-4">
+                Selected Writing: <br/> 
+                <a 
+                  href="https://livingweb.metalabel.com/internetphonebook?variantId=1/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className=" italic hover:text-purple-500 transition-colors"
+                >
+                  &#8594; A History of My Websites 
+                </a> on The Internet Phonebook <br/>
+
+                <a 
+                  href="https://joinreboot.org/p/my-biological-archive" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className=" italic hover:text-purple-500 transition-colors"
+                >
+                  &#8594; My Biological Archive 
+                </a> on Reboot
+
               </p>
             </div>
 
@@ -252,7 +274,7 @@ const Portfolio = () => {
               </p><br/>
 
               <p>
-              © 2025 Eileen Ahn. All rights reserved.
+              © 2026 Eileen Ahn. All rights reserved.
               </p>
             </div>
 
