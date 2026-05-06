@@ -356,22 +356,27 @@ const Portfolio = () => {
   // ============================================
   // HELPER: Prev/Next navigation buttons
   // ============================================
-  const PrevNextNav = () => (
-    <div className="flex justify-between items-center px-6">
-      <button
-        onClick={() => navigateProject('prev')}
-        className="text-sm hover:text-purple-500"
-      >
-        ← previous project
-      </button>
-      <button
-        onClick={() => navigateProject('next')}
-        className="text-sm hover:opacity-50 hover:text-purple-500"
-      >
-        next project →
-      </button>
-    </div>
-  );
+  const PrevNextNav = () => {
+    const currentIndex = navigableProjects.findIndex(p => p.id === selectedProject.id);
+    const prevProject = currentIndex <= 0 ? navigableProjects[navigableProjects.length - 1] : navigableProjects[currentIndex - 1];
+    const nextProject = currentIndex >= navigableProjects.length - 1 ? navigableProjects[0] : navigableProjects[currentIndex + 1];
+    return (
+      <div className="flex justify-between items-center px-6">
+        <button
+          onClick={() => navigateProject('prev')}
+          className="text-sm hover:text-purple-500"
+        >
+          ← {prevProject.title}
+        </button>
+        <button
+          onClick={() => navigateProject('next')}
+          className="text-sm hover:text-purple-500"
+        >
+          {nextProject.title} →
+        </button>
+      </div>
+    );
+  };
 
   // ============================================
   // PROJECT DETAIL PAGE
