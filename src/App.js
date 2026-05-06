@@ -187,19 +187,19 @@ const Portfolio = () => {
   // ============================================
   if (showInfo) {
     return (
-      <div className="h-screen w-screen bg-white overflow-y-auto">
+      <div className="h-screen w-screen bg-black overflow-y-auto">
       {/* Header */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black p-6 flex justify-between items-center">
         {/* UPDATED: Name is now clickable to return home */}
         <button
           onClick={() => goHome()}
-          className="text-sm hover:text-purple-500"
+          className="text-sm text-white hover:text-purple-400"
         >
           Eileen Ahn
         </button>
         <button
           onClick={() => setShowInfo(false)}
-          className="text-sm hover:text-purple-500"
+          className="text-sm text-white hover:text-purple-400"
         >
           ✕ Close
         </button>
@@ -208,9 +208,9 @@ const Portfolio = () => {
         {/* 3 Column Content - EDIT YOUR INFO TEXT HERE */}
         <div className="pt-24 pb-20 px-8 h-[calc(100vh-200px)]">
           <div className="h-full max-w-7xl mx-auto grid grid-cols-3 gap-12">
-            
+
             {/* Column 1 - EDIT FIRST COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-black">
+            <div className="text-sm leading-relaxed text-white">
               <p className="mb-4">
               I am a Korean-American designer, writer, and creative technologist based in San Francisco.
               Activated by inquiries rooted in liberation and autonomy, my art and research practice focus on
@@ -223,7 +223,7 @@ const Portfolio = () => {
             </div>
 
             {/* Column 2 - EDIT SECOND COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-black">
+            <div className="text-sm leading-relaxed text-white">
               <p className="mb-4">
                 Current Infatuations: <br/>
                 &#8594; Song on repeat is ça pik un peu quand même by Miki <br/>
@@ -255,7 +255,7 @@ const Portfolio = () => {
             </div>
 
             {/* Column 3 - EDIT THIRD COLUMN TEXT */}
-            <div className="text-sm leading-relaxed text-black">
+            <div className="text-sm leading-relaxed text-white">
               <p className="mb-4">
               ohleenieahn [at] gmail [dot] com
               </p>
@@ -385,7 +385,7 @@ const Portfolio = () => {
     return (
       <div className="min-h-screen w-screen bg-white overflow-y-auto">
         {/* Header - matches homepage */}
-        <div className="fixed top-0 left-0 right-0 z-40 bg-white p-6 flex justify-between items-center">
+        <div className="fixed top-0 left-0 right-0 z-40 bg-gradient-to-b from-white to-transparent px-6 pt-6 pb-10 flex justify-between items-center">
           <button
             onClick={() => goHome()}
             className="text-sm hover:text-purple-500"
@@ -663,7 +663,7 @@ const Portfolio = () => {
             >
 
               <div
-                className={`w-3.5 h-3.5 rounded-full transition-all ${
+                className={`w-4 h-4 rounded-full transition-all ${
                   hoveredProject?.id === project.id ? 'scale-150' : ''
                 } ${
                   isVisible ? 'bg-black' : 'bg-gray-300'
