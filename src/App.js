@@ -20,6 +20,69 @@ const Portfolio = () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  useEffect(() => {
+    // Persistent custom cursor
+    const cursor = document.createElement('img');
+    cursor.src = '/images/cursor.png';
+    cursor.style.cssText = `
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 10000;
+      mix-blend-mode: multiply;
+    `;
+    document.body.appendChild(cursor);
+
+    // Trail sparkles
+    let lastTime = 0;
+    const throttleMs = 40;
+
+    const handleMouseMove = (e) => {
+      // Move the persistent cursor
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+
+      // Spawn trail sparkle
+      const now = Date.now();
+      if (now - lastTime < throttleMs) return;
+      lastTime = now;
+
+      const el = document.createElement('img');
+      el.src = '/images/cursor.png';
+      el.style.cssText = `
+        position: fixed;
+        left: ${e.clientX}px;
+        top: ${e.clientY}px;
+        width: 30px;
+        height: 30px;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: multiply;
+        opacity: 1;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      `;
+      document.body.appendChild(el);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.style.opacity = '0';
+          el.style.transform = 'translate(-50%, -50%) scale(2)';
+        });
+      });
+
+      setTimeout(() => el.remove(), 700);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cursor.remove();
+    };
+  }, []);
+
   // ============================================
   // PROJECTS DATA - Edit ALL your projects here in one place
   // ============================================
@@ -61,17 +124,17 @@ const Portfolio = () => {
       year: "2023",
       role: "Illustrator, Designer",
       deliverables: "illustration, UX/UI",
-      image: "/images/tv.png",
+      image: "/images/tv-03.png",
       description: "→ Intro\n [TurboVote](https://turbovote.org/) is a digital platform that offers a personalized voting guidance to show voters what is at stake. Various organizations in private and public sectors partner with TurboVote to engage voters through customized embeds on their sites. I was tasked with creating a new suite of illustrations for the TurboVote homepage  to elevate the voter homepage experience.\n\n Role: Illustrator, Designer\n Product Design by Ryan Pierson",
       research: "→ Challenge\n The challenge was representing a diverse range of people icons that showcased an inclusive range of age, race, and gender. It was also challenging to translate niche voter vocabulary into a visual context relevant to each action. Each suite of people icons also has corresponding object action icons (e.g., “find where to vote” has a person holding a phone with a location icon, and its counterpart object action has just the phone with a location icon).",
-      result: "→ Solution\n The solution was to create flexible expressions, add accessories, and a range of skin tones and hair colors. More specifically, assigning blue and gray tones to hair added a layer of fiction, allowing for an open interpretation of the characters. Purple was used to emphasize the core action of each terminology. The first suite of icons was completed in 2023 and recently updated with the rebrand.",
-      impact: "→ Impact\n After the initial launch of the new suite of icons, 7.6% partners opted in for a new set of illustrations versus the default vector icons. Partners have the option to choose from 4 choices: default vector, people icons, object icons, or upload their own. Recently, the project expanded to offer 4 more colors: red, green, blue, and black to meet partner branding needs better.\n\n Partner Use Cases: [George Washington University](https://gwu.turbovote.org/), [Rutgers University](https://rutgers.turbovote.org/), [Vo+er](https://voter.turbovote.org/)",
-      image1: "/images/tv-01.png",
-      image2: "/images/tv-02.png",
-      image3: "/images/tv-04.png",
-      image4: "/images/tv-03.png",
+      result: "→ Solution\n The solution was leading with flexible expressions, accessories, and a range of skin tones and hair colors to represent a wide range of voter groups. Given that partners had a suite of basic vector icons to begin with, the illustration was built on top of those simple, familiar actions. An accent color was used to emphasize the core action of each terminology. The first suite of icons was completed in 2023, then updated in 2024 to add five more new color offerings. TurboVote was updated with new branding colors in 2026.",
+      impact: "→ Impact\n After the initial launch of the new suite of icons, 7.6% partners opted in for a new set of illustrations versus the default vector icons. Partners have the option to choose from 4 choices: default vector, people icons, object icons, or upload their own. The project currently offers 5 colors: red, green, blue, purple, and black to meet partner branding needs better.\n\n Partner Use Cases: [George Washington University](https://gwu.turbovote.org/), [Rutgers University](https://rutgers.turbovote.org/), [Vo+er](https://voter.turbovote.org/)",
+      image1: "/images/tv-04.png",
+      image2: "/images/tv-05.png",
+      image3: "/images/tv-01.png",
+      image4: "/images/tv-02.png",
       image5: "/images/tv-06.png",
-      image6: "/images/tv-05.png",
+      image6: "/images/tv.png",
     },
     { 
       id: 3, 
