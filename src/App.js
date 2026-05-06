@@ -21,68 +21,6 @@ const Portfolio = () => {
   }, []);
 
 
-  useEffect(() => {
-    // Persistent custom cursor
-    const cursor = document.createElement('img');
-    cursor.src = '/images/cursor.png';
-    cursor.style.cssText = `
-      position: fixed;
-      width: 32px;
-      height: 32px;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: 10000;
-      mix-blend-mode: multiply;
-    `;
-    document.body.appendChild(cursor);
-
-    // Trail sparkles
-    let lastTime = 0;
-    const throttleMs = 40;
-
-    const handleMouseMove = (e) => {
-      // Move the persistent cursor
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-
-      // Spawn trail sparkle
-      const now = Date.now();
-      if (now - lastTime < throttleMs) return;
-      lastTime = now;
-
-      const el = document.createElement('img');
-      el.src = '/images/cursor.png';
-      el.style.cssText = `
-        position: fixed;
-        left: ${e.clientX}px;
-        top: ${e.clientY}px;
-        width: 30px;
-        height: 30px;
-        transform: translate(-50%, -50%) scale(1);
-        pointer-events: none;
-        z-index: 9999;
-        mix-blend-mode: multiply;
-        opacity: 1;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      `;
-      document.body.appendChild(el);
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          el.style.opacity = '0';
-          el.style.transform = 'translate(-50%, -50%) scale(2)';
-        });
-      });
-
-      setTimeout(() => el.remove(), 700);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      cursor.remove();
-    };
-  }, []);
 
   // ============================================
   // PROJECTS DATA - Edit ALL your projects here in one place
