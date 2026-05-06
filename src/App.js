@@ -191,7 +191,7 @@ const Portfolio = () => {
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
         {/* UPDATED: Name is now clickable to return home */}
-        <button 
+        <button
           onClick={() => goHome()}
           className="text-sm hover:text-purple-500"
         >
@@ -388,7 +388,7 @@ const Portfolio = () => {
         <div className="fixed top-0 left-0 right-0 z-40 bg-white p-6 flex justify-between items-center">
           <button
             onClick={() => goHome()}
-            className= "text-sm hover:text-purple-500"
+            className="text-sm hover:text-purple-500"
           >
             Eileen Ahn
           </button>
@@ -396,7 +396,7 @@ const Portfolio = () => {
             onClick={() => { window.history.pushState({ page: 'info' }, ''); setShowInfo(true); }}
             className="text-sm hover:text-purple-500"
           >
-            info
+            Info
           </button>
         </div>
 
@@ -404,13 +404,13 @@ const Portfolio = () => {
         <div className="pt-20 pb-4 px-6 text-center">
           <h1 className="text-lg font-medium uppercase tracking-wide mb-1">{selectedProject.title}</h1>
           {selectedProject.year && (
-            <p className="text-sm text-black mb-0.5">{selectedProject.year}</p>
+            <p className="text-sm text-gray-500 mb-0.5">{selectedProject.year}</p>
           )}
           {selectedProject.role && (
-            <p className="text-sm text-black mb-0.5">Role: {selectedProject.role}</p>
+            <p className="text-sm text-gray-500 mb-0.5">Role: {selectedProject.role}</p>
           )}
           {selectedProject.deliverables && (
-            <p className="text-sm text-black">Deliverables: {selectedProject.deliverables}</p>
+            <p className="text-sm text-gray-500">Deliverables: {selectedProject.deliverables}</p>
           )}
         </div>
 
@@ -574,9 +574,9 @@ const Portfolio = () => {
 
       {/* Top left: Your Name - EDIT YOUR NAME HERE */}
       {/* UPDATED: Now clickable to return to homepage */}
-      <button 
+      <button
         onClick={() => goHome()}
-        className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500">
+        className="fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500">
         Eileen Ahn
       </button>
 
