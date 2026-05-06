@@ -20,6 +20,7 @@ const Portfolio = () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+
   useEffect(() => {
     // Persistent custom cursor
     const cursor = document.createElement('img');
@@ -250,19 +251,19 @@ const Portfolio = () => {
   // ============================================
   if (showInfo) {
     return (
-      <div className="h-screen w-screen bg-black overflow-y-auto">
+      <div className="h-screen w-screen bg-purple-500 overflow-y-auto">
       {/* Header */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black p-6 flex justify-between items-center">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-purple-500 p-6 flex justify-between items-center">
         {/* UPDATED: Name is now clickable to return home */}
         <button
           onClick={() => goHome()}
-          className="text-sm text-white hover:text-purple-400"
+          className="text-sm text-white hover:text-black"
         >
           Eileen Ahn
         </button>
         <button
           onClick={() => setShowInfo(false)}
-          className="text-sm text-white hover:text-purple-400"
+          className="text-sm text-white hover:text-black"
         >
           ✕ Close
         </button>
@@ -300,7 +301,7 @@ const Portfolio = () => {
                   href="https://livingweb.metalabel.com/internetphonebook?variantId=1/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className=" italic hover:text-purple-500 transition-colors"
+                  className=" italic hover:text-black transition-colors"
                 >
                   &#8594; A History of My Websites 
                 </a> on The Internet Phonebook <br/>
@@ -309,7 +310,7 @@ const Portfolio = () => {
                   href="https://joinreboot.org/p/my-biological-archive" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className=" italic hover:text-purple-500 transition-colors"
+                  className=" italic hover:text-black transition-colors"
                 >
                   &#8594; My Biological Archive 
                 </a> on Reboot
@@ -327,7 +328,7 @@ const Portfolio = () => {
                   href="https://www.instagram.com/leanahnleen/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-purple-500 transition-colors"
+                  className="hover:text-black transition-colors"
                 >
                   Instagram &#8599;
                 </a>
@@ -336,7 +337,7 @@ const Portfolio = () => {
                   href="https://www.linkedin.com/in/eileenahn/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-purple-500 transition-colors"
+                  className="hover:text-black transition-colors"
                 >
                   Linkedin &#8599;
                 </a>
@@ -345,13 +346,13 @@ const Portfolio = () => {
                   href="https://schemacquisition.substack.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-purple-500 transition-colors"
+                  className="hover:text-black transition-colors"
                 >
                   Substack &#8599;
                 </a>
               </p>
               <p>
-              This website was handmade with love (+ React & Tailwind) and is always in progress…
+              This website was given a <a href= "https://www.websitecarbon.com/website/eileenie-online/" target="_blank" className="hover:text-black transition-colors"> carbon rating &#8599;</a> of A+ where less than 0.01g of CO2 is produced when someone visits the website. It was handmade with love (+ React & Tailwind) and is always in progress…
               </p><br/>
 
               <p>
