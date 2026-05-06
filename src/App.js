@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -6,6 +6,19 @@ const Portfolio = () => {
   const [showInfo, setShowInfo] = useState(false);
   // NEW: Track which filter is active (null means show all projects)
   const [activeFilter, setActiveFilter] = useState("All");
+
+  const goHome = () => {
+    setSelectedProject(null);
+    setShowInfo(false);
+    setHoveredProject(null);
+    setActiveFilter("All");
+  };
+
+  useEffect(() => {
+    const handlePopState = () => goHome();
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // ============================================
   // PROJECTS DATA - Edit ALL your projects here in one place
@@ -179,11 +192,7 @@ const Portfolio = () => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-white p-6 flex justify-between items-center border-b border-gray-200">
         {/* UPDATED: Name is now clickable to return home */}
         <button 
-          onClick={() => {
-            setShowInfo(false);
-            setSelectedProject(null); // FIXED: Also clear selected project
-            setActiveFilter("All");
-          }}
+          onClick={() => goHome()}
           className="text-sm hover:text-purple-500"
         >
           Eileen Ahn
@@ -372,17 +381,14 @@ const Portfolio = () => {
       <div className="min-h-screen w-screen bg-white overflow-y-auto">
         {/* Header - matches homepage */}
         <div className="fixed top-0 left-0 right-0 z-40 bg-white p-6 flex justify-between items-center">
-          <button 
-            onClick={() => {
-              setSelectedProject(null);
-              setActiveFilter("All");
-            }}
+          <button
+            onClick={() => goHome()}
             className= "text-sm hover:text-purple-500"
           >
             Eileen Ahn
           </button>
           <button
-            onClick={() => setShowInfo(true)}
+            onClick={() => { window.history.pushState({ page: 'info' }, ''); setShowInfo(true); }}
             className="text-sm hover:text-purple-500"
           >
             info
@@ -564,18 +570,14 @@ const Portfolio = () => {
       {/* Top left: Your Name - EDIT YOUR NAME HERE */}
       {/* UPDATED: Now clickable to return to homepage */}
       <button 
-        onClick={() => {
-          setSelectedProject(null);
-          setShowInfo(false);
-          setActiveFilter("All");
-        }}
+        onClick={() => goHome()}
         className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500">
         Eileen Ahn
       </button>
 
       {/* Top right: Info Button */}
       <button
-        onClick={() => setShowInfo(true)}
+        onClick={() => { window.history.pushState({ page: 'info' }, ''); setShowInfo(true); }}
         className="fixed top-6 right-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500"
       >
         Info
@@ -649,7 +651,7 @@ const Portfolio = () => {
                 if (project.externalLink) {
                   window.open(project.externalLink, '_blank', 'noopener,noreferrer');
                 } else {
-                  // Otherwise, open inner page as normal
+                  window.history.pushState({ page: 'project', id: project.id }, '');
                   setSelectedProject(project);
                 }
               }}
