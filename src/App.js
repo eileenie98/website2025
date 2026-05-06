@@ -5,7 +5,7 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
   // NEW: Track which filter is active (null means show all projects)
-  const [activeFilter, setActiveFilter] = useState(null);
+  const [activeFilter, setActiveFilter] = useState("All");
 
   // ============================================
   // PROJECTS DATA - Edit ALL your projects here in one place
@@ -182,7 +182,7 @@ const Portfolio = () => {
           onClick={() => {
             setShowInfo(false);
             setSelectedProject(null); // FIXED: Also clear selected project
-            setActiveFilter(null);
+            setActiveFilter("All");
           }}
           className="text-sm hover:text-purple-500"
         >
@@ -375,7 +375,7 @@ const Portfolio = () => {
           <button 
             onClick={() => {
               setSelectedProject(null);
-              setActiveFilter(null);
+              setActiveFilter("All");
             }}
             className= "text-sm hover:text-purple-500"
           >
@@ -567,7 +567,7 @@ const Portfolio = () => {
         onClick={() => {
           setSelectedProject(null);
           setShowInfo(false);
-          setActiveFilter(null);
+          setActiveFilter("All");
         }}
         className= "fixed top-6 left-6 z-30 text-sm mix-blend-difference text-gray-400 hover:text-purple-500">
         Eileen Ahn
@@ -584,35 +584,43 @@ const Portfolio = () => {
       {/* Bottom left: Filter Categories - EDIT YOUR CATEGORIES HERE */}
       {/* UPDATED: Now clickable to filter projects */}
       <div className="fixed bottom-6 left-6 z-50 text-xs space-y-1 mix-blend-difference">
-        <div 
+        <div
+          className={`cursor-pointer transition-colors ${
+            activeFilter === "All" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
+          }`}
+          onClick={() => setActiveFilter("All")}
+        >
+          All
+        </div>
+        <div
           className={`cursor-pointer transition-colors ${
             activeFilter === "Identity" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Identity" ? null : "Identity")}
+          onClick={() => setActiveFilter(activeFilter === "Identity" ? "All" : "Identity")}
         >
           Brand Identity
         </div>
-        <div 
+        <div
           className={`cursor-pointer transition-colors ${
             activeFilter === "Web" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Web" ? null : "Web")}
+          onClick={() => setActiveFilter(activeFilter === "Web" ? "All" : "Web")}
         >
           Web
         </div>
-        <div 
+        <div
           className={`cursor-pointer transition-colors ${
             activeFilter === "Print" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Print" ? null : "Print")}
+          onClick={() => setActiveFilter(activeFilter === "Print" ? "All" : "Print")}
         >
           Print
         </div>
-        <div 
+        <div
           className={`cursor-pointer transition-colors ${
             activeFilter === "Personal" ? "text-purple-500" : "text-gray-400 hover:text-purple-500"
           }`}
-          onClick={() => setActiveFilter(activeFilter === "Personal" ? null : "Personal")}
+          onClick={() => setActiveFilter(activeFilter === "Personal" ? "All" : "Personal")}
         >
           Personal
         </div>
@@ -623,7 +631,7 @@ const Portfolio = () => {
        <div className="absolute inset-0">
         {projects.map((project) => {
           // Check if this project matches the active filter
-          const isVisible = !activeFilter || project.categories.includes(activeFilter);
+          const isVisible = activeFilter === "All" || project.categories.includes(activeFilter);
           
           return (
             <button
