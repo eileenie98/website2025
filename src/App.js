@@ -352,7 +352,7 @@ const Portfolio = () => {
                 </a>
               </p>
               <p>
-              This website was given a <a href= "https://www.websitecarbon.com/website/eileenie-online/" target="_blank" className="hover:text-black transition-colors"> carbon rating &#8599;</a> of A+ where less than 0.01g of CO2 is produced when someone visits the website. It was handmade with love (+ React & Tailwind) and is always in progress…
+              This website was given a <a href= "https://www.websitecarbon.com/website/eileenie-online/" target="_blank" rel="noreferrer" className="hover:text-black transition-colors"> carbon rating &#8599;</a> of A+ where less than 0.01g of CO2 is produced when someone visits the website. It was handmade with love (+ React & Tailwind) and is always in progress…
               </p><br/>
 
               <p>
