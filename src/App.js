@@ -84,16 +84,16 @@ const Portfolio = () => {
       year: "2022",
       role: "Lead Designer, Art Director",
       deliverables: "brand identity, web design",
-      image: "/images/50p1-main.png",
+      image: "/images/50p1%20hero.webm",
       description: "→ Intro\n [50+1 Strategies](https://50p1.com/) was a political consulting firm based in San Francisco that operated for 13 years to build  local campaigns and grassroots movements surrounding progressive advocacy. In their 11th year, I was tasked with their rebrand and art direction of the new website.\n\n Role: Lead Designer, Art Director\n Web Design by Apollo Artistry", 
       research: "→ Challenge\n The challenge was dissecting the firm's title and old logo of the numbers (50, 1), signifying a tipping point towards the majority. There was also a need to create a timeless logo symbolic of dynamic, lasting movement for and towards change.",
       result: "→ Solution\n The solution was utilizing the plus sign that served as the joining motif of the two numbers. We arrived at a logo that considers the balance of youthful power as well as dynamism and strength. The layered plus sign offers an open-ended visual interpretation that alludes to windows or doors and portals of change to the other side.",
       impact: "→ Impact\n The new brand identity received overwhelmingly positive feedback from past and present clients with opportunities for new collaborations. The rebrand launch drove website traffic by 147% with a 28% increase in newsletter subscribers.",
       image1: "/images/website.webm",
-      image2: "/images/50p1-02.png",
-      image3: "/images/50p1-03.png",
-      image4: "/images/50p1-04.jpg",
-      image5: "/images/50p1-05.gif",
+      image2: "/images/50p1%20billboard.jpg",
+      image3: "/images/50p1%20logo%20collage.webm",
+      image4: "/images/50p1%20logo%20evolution.webm",
+      image5: "/images/50p1%20audiences.webm",
       image6: "/images/50p1-01.gif",
     },
     { 
@@ -428,11 +428,10 @@ const Portfolio = () => {
             {/* Section 1: Hero Image - Full width */}
             {selectedProject.image && (
               <div className="w-full">
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title}
-                  className="w-full rounded-lg"
-                />
+                {selectedProject.image.endsWith('.webm')
+                  ? <video src={selectedProject.image} autoPlay loop muted playsInline className="w-full rounded-lg" />
+                  : <img src={selectedProject.image} alt={selectedProject.title} className="w-full rounded-lg" />
+                }
               </div>
             )}
 
@@ -461,7 +460,9 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               <div className="md:col-span-2">
                 {selectedProject.image3 && (
-                  <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
+                  selectedProject.image3.endsWith('.webm')
+                    ? <video src={selectedProject.image3} autoPlay loop muted playsInline className="w-full rounded-lg" />
+                    : <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
                 )}
               </div>
               <div className="text-base leading-relaxed text-black">
@@ -473,7 +474,10 @@ const Portfolio = () => {
             {/* Section 5: Full width image */}
             {selectedProject.image4 && (
               <div className="w-full mt-8">
-                <img src={selectedProject.image4} alt="" className="w-full rounded-lg" />
+                {selectedProject.image4.endsWith('.webm')
+                  ? <video src={selectedProject.image4} autoPlay loop muted playsInline className="w-full rounded-lg" />
+                  : <img src={selectedProject.image4} alt="" className="w-full rounded-lg" />
+                }
               </div>
             )}
 
@@ -482,12 +486,16 @@ const Portfolio = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div>
                   {selectedProject.image5 && (
-                    <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
+                    selectedProject.image5.endsWith('.webm')
+                      ? <video src={selectedProject.image5} autoPlay loop muted playsInline className="w-full rounded-lg" />
+                      : <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
                   )}
                 </div>
                 <div>
                   {selectedProject.image6 && (
-                    <img src={selectedProject.image6} alt="" className="w-full rounded-lg" />
+                    selectedProject.image6.endsWith('.webm')
+                      ? <video src={selectedProject.image6} autoPlay loop muted playsInline className="w-full rounded-lg" />
+                      : <img src={selectedProject.image6} alt="" className="w-full rounded-lg" />
                   )}
                 </div>
               </div>
