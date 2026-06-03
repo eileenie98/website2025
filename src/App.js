@@ -438,7 +438,7 @@ const Portfolio = () => {
 
             {/* Section 2: 1/3 text left, 2/3 image right */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-              <div className="text-sm leading-relaxed text-black">
+              <div className="text-base leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.description)}
               </div>
               <div className="md:col-span-2">
@@ -462,7 +462,7 @@ const Portfolio = () => {
                   <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
                 )}
               </div>
-              <div className="text-sm leading-relaxed text-black">
+              <div className="text-base leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.research)}
                 {renderTextWithLinks(selectedProject.result)}
               </div>
@@ -494,7 +494,7 @@ const Portfolio = () => {
             {/* Section 7: 1/3 text left, 2/3 image right */}
             {selectedProject.impact && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <div className="text-sm leading-relaxed text-black">
+                <div className="text-base leading-relaxed text-black">
                   {renderTextWithLinks(selectedProject.impact)}
                 </div>
               </div>
