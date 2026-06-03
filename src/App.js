@@ -436,39 +436,28 @@ const Portfolio = () => {
               </div>
             )}
 
-            {/* Dotted separator */}
-            <div className="border-t-2 border-dotted border-black my-8" />
-
-            {/* Section 2: Two columns - Text left, Image right */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Section 2: 1/3 text left, 2/3 image right */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               <div className="text-sm leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.description)}
               </div>
-              <div>
+              <div className="md:col-span-2">
                 {selectedProject.image1 && (
                   <img src={selectedProject.image1} alt="" className="w-full rounded-lg" />
                 )}
               </div>
             </div>
 
-            {/* Dotted separator */}
-            <div className="border-t-2 border-dotted border-black my-8" />
-
             {/* Section 3: Full width image */}
             {selectedProject.image2 && (
-              <div className="w-full">
+              <div className="w-full mt-8">
                 <img src={selectedProject.image2} alt="" className="w-full rounded-lg" />
               </div>
             )}
 
-            {/* Dotted separator */}
-            {selectedProject.image2 && (
-              <div className="border-t-2 border-dotted border-black my-8" />
-            )}
-
-            {/* Section 4: Two columns - Image left, Text right */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
+            {/* Section 4: 2/3 image left, 1/3 text right */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+              <div className="md:col-span-2">
                 {selectedProject.image3 && (
                   <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
                 )}
@@ -479,54 +468,37 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Dotted separator */}
-            <div className="border-t-2 border-dotted border-black my-8" />
-
             {/* Section 5: Full width image */}
             {selectedProject.image4 && (
-              <div className="w-full">
+              <div className="w-full mt-8">
                 <img src={selectedProject.image4} alt="" className="w-full rounded-lg" />
               </div>
             )}
 
-            {/* Additional image if exists */}
-            {selectedProject.image5 && (
-              <>
-                <div className="border-t-2 border-dotted border-black my-8" />
-                <div className="w-full">
-                  <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
-                </div>
-              </>
-            )}
-
-            {/* Impact section if exists */}
-            {/* {selectedProject.impact && (
-              <>
-                <div className="border-t-2 border-dotted border-black my-8" />
-                <div className="text-sm leading-relaxed text-black max-w-xl">
-                  {renderTextWithLinks(selectedProject.impact)}
+            {/* Section 6: Two images side by side, 1/2 + 1/2 */}
+            {(selectedProject.image5 || selectedProject.image6) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>
+                  {selectedProject.image5 && (
+                    <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
+                  )}
                 </div>
                 <div>
-                {selectedProject.image6 && (
-                  <img src={selectedProject.image1} alt="" className="w-full rounded-lg" />
-                )}
+                  {selectedProject.image6 && (
+                    <img src={selectedProject.image6} alt="" className="w-full rounded-lg" />
+                  )}
+                </div>
               </div>
-              </>
-            )} */}
+            )}
 
-            {/* Dotted separator */}
-            <div className="border-t-2 border-dotted border-black my-8" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="text-sm leading-relaxed text-black">
-                {renderTextWithLinks(selectedProject.impact)}
+            {/* Section 7: 1/3 text left, 2/3 image right */}
+            {selectedProject.impact && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div className="text-sm leading-relaxed text-black">
+                  {renderTextWithLinks(selectedProject.impact)}
+                </div>
               </div>
-              <div>
-                {selectedProject.image6 && (
-                  <img src={selectedProject.image6} alt="" className="w-full rounded-lg" />
-                )}
-              </div>
-            </div>
+            )}
 
           </div>
         </div>
