@@ -381,6 +381,22 @@ const Portfolio = () => {
   };
 
   // ============================================
+  // HELPER: Render image or video with consistent 9:16 crop
+  // ============================================
+  const renderMedia = (src, alt = "") => {
+    if (!src) return null;
+    const mediaClass = "w-full h-full object-cover object-center rounded-lg";
+    return (
+      <div className="aspect-[16/9] w-full overflow-hidden rounded-lg">
+        {src.endsWith('.webm')
+          ? <video src={src} autoPlay loop muted playsInline className={mediaClass} />
+          : <img src={src} alt={alt} className={mediaClass} />
+        }
+      </div>
+    );
+  };
+
+  // ============================================
   // PROJECT DETAIL PAGE
   // ============================================
   if (selectedProject && !showInfo) {
@@ -426,14 +442,7 @@ const Portfolio = () => {
           <div className="bg-[#fefff7] border border-black rounded-lg p-8 max-w-8xl mx-auto">
             
             {/* Section 1: Hero Image - Full width */}
-            {selectedProject.image && (
-              <div className="w-full">
-                {selectedProject.image.endsWith('.webm')
-                  ? <video src={selectedProject.image} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                  : <img src={selectedProject.image} alt={selectedProject.title} className="w-full rounded-lg" />
-                }
-              </div>
-            )}
+            {selectedProject.image && renderMedia(selectedProject.image, selectedProject.title)}
 
             {/* Section 2: 1/3 text left, 2/3 image right */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -441,29 +450,19 @@ const Portfolio = () => {
                 {renderTextWithLinks(selectedProject.description)}
               </div>
               <div className="md:col-span-2">
-                {selectedProject.image1 && (
-                  selectedProject.image1.endsWith('.webm')
-                    ? <video src={selectedProject.image1} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                    : <img src={selectedProject.image1} alt="" className="w-full rounded-lg" />
-                )}
+                {renderMedia(selectedProject.image1)}
               </div>
             </div>
 
             {/* Section 3: Full width image */}
             {selectedProject.image2 && (
-              <div className="w-full mt-8">
-                <img src={selectedProject.image2} alt="" className="w-full rounded-lg" />
-              </div>
+              <div className="mt-8">{renderMedia(selectedProject.image2)}</div>
             )}
 
             {/* Section 4: 2/3 image left, 1/3 text right */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               <div className="md:col-span-2">
-                {selectedProject.image3 && (
-                  selectedProject.image3.endsWith('.webm')
-                    ? <video src={selectedProject.image3} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                    : <img src={selectedProject.image3} alt="" className="w-full rounded-lg" />
-                )}
+                {renderMedia(selectedProject.image3)}
               </div>
               <div className="text-base leading-relaxed text-black">
                 {renderTextWithLinks(selectedProject.research)}
@@ -473,31 +472,14 @@ const Portfolio = () => {
 
             {/* Section 5: Full width image */}
             {selectedProject.image4 && (
-              <div className="w-full mt-8">
-                {selectedProject.image4.endsWith('.webm')
-                  ? <video src={selectedProject.image4} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                  : <img src={selectedProject.image4} alt="" className="w-full rounded-lg" />
-                }
-              </div>
+              <div className="mt-8">{renderMedia(selectedProject.image4)}</div>
             )}
 
             {/* Section 6: Two images side by side, 1/2 + 1/2 */}
             {(selectedProject.image5 || selectedProject.image6) && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div>
-                  {selectedProject.image5 && (
-                    selectedProject.image5.endsWith('.webm')
-                      ? <video src={selectedProject.image5} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                      : <img src={selectedProject.image5} alt="" className="w-full rounded-lg" />
-                  )}
-                </div>
-                <div>
-                  {selectedProject.image6 && (
-                    selectedProject.image6.endsWith('.webm')
-                      ? <video src={selectedProject.image6} autoPlay loop muted playsInline className="w-full rounded-lg" />
-                      : <img src={selectedProject.image6} alt="" className="w-full rounded-lg" />
-                  )}
-                </div>
+                <div>{renderMedia(selectedProject.image5)}</div>
+                <div>{renderMedia(selectedProject.image6)}</div>
               </div>
             )}
 
