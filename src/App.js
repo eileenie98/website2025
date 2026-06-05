@@ -95,6 +95,7 @@ const Portfolio = () => {
       image4: "/images/50p1evolution.webm",
       image5: "/images/50p1audience.webm",
       image6: "/images/50p1colors.webm",
+      image7: "/images/50p1-04.jpg",
     },
     { 
       id: 4, 
@@ -489,6 +490,9 @@ const Portfolio = () => {
                 <div className="text-base leading-relaxed text-black">
                   {renderTextWithLinks(selectedProject.impact)}
                 </div>
+                <div className="md:col-span-2">
+                {renderMedia(selectedProject.image7)}
+              </div>
               </div>
             )}
 
