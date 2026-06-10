@@ -93,9 +93,10 @@ const Portfolio = () => {
       image2: "/images/50p1%20billboard.jpg",
       image3: "/images/50p1%20collage.webm", 
       image4: "/images/50p1evolution.webm",
-      image5: "/images/50p1audience.webm",
-      image6: "/images/50p1colors.webm",
-      image7: "/images/50p1-04.jpg",
+      image5: "/images/50p1-04.jpg",
+      image6: "/images/50p1audience.webm",
+      image7: "/images/50p1colors.webm",
+      image8: "/images/50p1-04.jpg",
     },
     { 
       id: 4, 
@@ -471,28 +472,40 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Section 5: Full width image */}
-            {selectedProject.image4 && (
-              <div className="mt-8">{renderMedia(selectedProject.image4)}</div>
-            )}
-
-            {/* Section 6: Two images side by side, 1/2 + 1/2 */}
-            {(selectedProject.image5 || selectedProject.image6) && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div>{renderMedia(selectedProject.image5)}</div>
-                <div>{renderMedia(selectedProject.image6)}</div>
-              </div>
-            )}
-
-            {/* Section 7: 1/3 text left, 2/3 image right */}
-            {selectedProject.impact && (
+            {/* Section 5: 1/3 text left, 2/3 image right */}
+            {(selectedProject.impact || selectedProject.image4) && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 <div className="text-base leading-relaxed text-black">
                   {renderTextWithLinks(selectedProject.impact)}
                 </div>
                 <div className="md:col-span-2">
-                {renderMedia(selectedProject.image7)}
+                  {renderMedia(selectedProject.image4)}
+                </div>
               </div>
+            )}
+
+            {/* Section 6: Full width image */}
+            {selectedProject.image5 && (
+              <div className="mt-8">{renderMedia(selectedProject.image5)}</div>
+            )}
+
+            {/* Section 7: Two images side by side, 1/2 + 1/2 */}
+            {(selectedProject.image6 || selectedProject.image7) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>{renderMedia(selectedProject.image6)}</div>
+                <div>{renderMedia(selectedProject.image7)}</div>
+              </div>
+            )}
+
+            {/* Section 8: 2/3 image left, 1/3 text right */}
+            {selectedProject.image8 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div className="md:col-span-2">
+                  {renderMedia(selectedProject.image8)}
+                </div>
+                <div className="text-base leading-relaxed text-black">
+                  {renderTextWithLinks(selectedProject.caption)}
+                </div>
               </div>
             )}
 
@@ -647,11 +660,10 @@ const Portfolio = () => {
       {/* Center Hover Image Preview */}
       {hoveredProject && (
         <div className="fixed inset-0 -z-10 pointer-events-none">
-        <img
-          src={hoveredProject.image}
-          alt={hoveredProject.title}
-          className="w-full h-full object-cover"
-        />
+          {hoveredProject.image.endsWith('.webm')
+            ? <video src={hoveredProject.image} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+            : <img src={hoveredProject.image} alt={hoveredProject.title} className="w-full h-full object-cover" />
+          }
         </div>
         // <div
         //   className="fixed z-40 pointer-events-none"
